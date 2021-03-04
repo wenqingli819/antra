@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wevsite Header</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        form.example input[type=text] {
+            padding: 10px;
+            font-size: 11px;
+            float: left;
+            width: 80%;
+        }
+
+        form.example button {
+            float: left;
+            width: 20%;
+            padding: 10px;
+            color: white;
+            border: 1px solid grey;
+            border-left: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Top header menu containing
+         logo and Navigation bar -->
+        <div id="top-header">
+            <table>
+                <tr>
+                    <!-- Logo -->
+                    <td>
+                        <div id="logo">
+                            <a href="https://antra.net/" target="_blank"> <img
+                                    src="https://antra.com/wp-content/uploads/2021/02/2021-02-18-2.png" width="150px"
+                                    height="50px" title="Antra Logo" alt="Company Logo missing" /></a>
+                        </div>
+                    </td>
+
+
+                    <!-- Use text input field and button for the search. -->
+                    <td>
+                        <form class="example" action="action_page.php">
+                            <input type="text" placeholder="Search.." name="search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+
+                    <!-- Use list for the menu -->
+                    <td>
+                        <ul>
+                            <li><a href="https://antra.com/job-opportunities/">NEWS</a></li>
+                            <li><a href="https://antra.com/about-us/">ABOUT THE UNIVERSITY</a></li>
+                            <li><a href="https://antra.com/technology-resources/">TRAINING COURSES</a></li>
+                            <li><a href="https://antra.com/technology-services/">FOR COMPANIES</a></li>
+                            <li><a href="https://antra.com/my-antra/">FORUM</a></li>
+                            <li><a href="https://antra.com/contact/">CONTACTS</a></li>
+                        </ul>
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+    </header>
+
+
+</body>
+
+</html>

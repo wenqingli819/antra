@@ -15,15 +15,15 @@
   - EXCEPT
 - CTE
   - Recursive CTE
+- View
 - Stored Procedures
 - Functions
 - Trigger
-- Indexing
 - Normalization Process 
 - Transaction
 - Concurrency and Isolation Levels
 - Performance Tuning
-  - Query Caching
+  - Indexing
 
 ### Front-end
 
