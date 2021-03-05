@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/css3.css">
+    <title>Flight Order</title>
+</head>
+
+<body>
+    <div class="form">
+        <table fixed>
+            <tr>
+                <td>
+
+                    <h1>FLIGHT ORDER</h1>
+
+                    <div class="table1">
+                        <table fixed>
+                            <tr>
+                                <td>
+                                    <div class="text">From
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="cities"></label>
+
+                                    <select id="cities">
+                                        <option value="city-0" selected="selected">enter a city</option>
+                                        <option value="city-1">New York</option>
+                                        <option value="city-2">Seattle</option>
+                                        <option value="city-3">San Francisco</option>
+                                        <option value="city-4">Shenzhen</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="text">Departure Date
+                                    </div>
+
+                                    <input required type="date" style="width:215px" placeholder="09.06.2014" />
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="text">Return Date
+                                    </div>
+
+                                    <input required type="date" style="width:215px" placeholder="09.06.2014" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    12+&emsp; 2-12&emsp; 0-2
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr>
+                                <td>
+
+                                    <input id="number" type="number" min="12" max="120" value="0" />
+                                    <input id="number" type="number" min="2" max="12" value="0">
+                                    <input id="number" type="number" min="0" max="2" value="0">
+                                </td>
+                            </tr>
+
+
+                        </table>
+                    </div>
+
+                    <div class="table2">
+                        <table fixed>
+                            <tr>
+                                <td>
+                                    <div class="text">
+                                        To
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="cities"></label>
+
+                                    <select id="cities">
+                                        <option value="city-0" selected="selected">enter a city</option>
+                                        <option value="city-1">New York</option>
+                                        <option value="city-2">Seattle</option>
+                                        <option value="city-3">San Francisco</option>
+                                        <option value="city-4">Shenzhen</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="text">Time Interval
+                                    </div>
+
+
+                                    <input type="time" class="without_ampm">
+                                    <input type="time" class="without_ampm">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="text">Time Interval
+                                    </div>
+
+
+                                    <input type="time" class="without_ampm">
+                                    <input type="time" class="without_ampm">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+
+                                    <div class="text">Choose class
+                                    </div>
+
+                                    <label for="class"></label>
+
+                                    <select id="class">
+                                        <option value="class-1">First Class</option>
+                                        <option value="class-2">Business Class</option>
+                                        <option value="class-3" selected="selected">Economy</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <button type="search" class="search">Search</button>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+            </tr>
+            </td>
+        </table>
+    </div>
+
+</body>
+
+</html>

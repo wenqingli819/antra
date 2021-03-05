@@ -1,0 +1,67 @@
+.form{
+    height: 300px;
+}
+
+table{
+    text-align:center;
+    max-width:650px;
+    margin:0px 40px auto;
+    background-color:pink;
+    height: 150px;
+
+}
+.text{
+    text-align:left;
+}
+#cities,#class{
+    width:215px;
+}
+
+
+.table1{
+    float: left;
+    width: 300px;
+    background-color:pink;
+    height: 250px;
+
+}
+
+.table2{
+    float: left;
+    width: 300px;
+    background-color:pink;
+    height: 250px;
+
+}
+
+/* general rules for all buttons*/
+button {
+    cursor: pointer;
+    width: 215px;
+    height: 35px;
+    float: right;
+}
+
+
+a:link{
+    float: right;
+}
+a:hover {
+    cursor: pointer;
+}
+
+.time{
+    width: 5px;
+}
+
+.without_ampm::-webkit-datetime-edit-ampm-field {
+    display: none;
+  }
+  input[type=time]::-webkit-clear-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    -ms-appearance:none;
+    appearance: none;
+    margin: -10px;
+  }
