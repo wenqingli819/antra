@@ -1,0 +1,95 @@
+.form {
+    text-align: center;
+    background-color:#3b5998;
+    height:500px;
+    width: 970px;
+}
+fieldset {
+    /* display: inline-block; */
+    margin-left:20px;
+    margin-right:20px;
+    margin-bottom:10px;
+
+}
+
+#title{
+    color:white;
+    text-shadow: 1px 0 white;
+    font-weight:bold;
+    font-size: 80px;
+}
+#subtitle{
+    color:white;
+    font-size: 40px;
+    font-weight: 900;
+}
+#thirdtitle{
+    color:white;
+    font-size: 20px;
+    font-weight: 900;
+}
+.bottom {
+    vertical-align: baseline;
+    font-size: 20px;
+    font-weight: 100;
+
+}
+#table1{
+    color:white;
+    margin-left: 35px;
+    float: left;
+    width:35%;
+
+    /* for round borders */
+    border-radius: 10px;
+    border: 1px solid white;
+    padding: 20px;
+    height: 200px;
+
+}
+#table2{
+    color:white;
+    /* display: inline-block; */
+    clear:right;
+    width:47%;
+
+    /* for round borders */
+    border-radius: 10px;
+    border: 1px solid white;
+    padding: 20px;
+    height: 200px;
+}
+
+#key{
+    font-weight: 700;
+    text-align: left;
+    padding-top: 5px;
+}
+
+#key2{
+    font-weight: 700;
+    text-align: left;
+    padding-top: 5px;
+    margin-left: 15px;
+}
+
+
+#cell1{
+    text-align: left;
+    margin-left:10px;
+    padding: 5px;
+
+}
+#reset{
+    color:#3b5998;
+    margin-top:30px;
+    border:none;
+}
+#register{
+    color:#3b5998;
+    margin-top:5px;
+    border:none;
+}
+textarea {
+    width: 430px;
+  }

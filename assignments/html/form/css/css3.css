@@ -1,8 +1,13 @@
-.form{
+body {
+    text-align: center;
+}
+.form {
     height: 300px;
+    display: inline-block;
 }
 
 table{
+
     text-align:center;
     max-width:650px;
     margin:0px 40px auto;

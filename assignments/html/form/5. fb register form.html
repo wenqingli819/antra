@@ -9,6 +9,139 @@
 </head>
 
 <body>
+    <div class="form">
+        <form action="/action_page.php">
+            <tr>
+                <thead>
+                    <p>
+                    <div id=title>
+                        fakebook <span class="bottom">&reg;</span>
+                    </div>
+                    </p>
+                </thead>
+            </tr>
+            <tr>
+                <td>
+                    <div id=subtitle>
+                        Registration
+                    </div>
+                    <p>
+                    <div id=thirdtitle>
+                        It is safe and it will always be!
+                    </div>
+                    </p>
+                </td>
+            </tr>
+            <!-- left table -->
+            <fieldset id=table1>
+                <legend><strong>None-important Information</strong></legend>
+                <div id=cell1>
+                    <label for="fname"> </label>
+                    <input type="text" id="fname" placeholder="FirstName">
+                    <label for="lname"> </label>
+                    <input type="text" id="lname" placeholder="LastName">
+                </div>
+                <div id=cell1>
+                    <label for="email"> </label>
+                    <input type="text" id="email" placeholder="YourEmail">
+                    <label for="phone"> </label>
+                    <input type="text" id="phone" placeholder="PhoneNumber">
+                </div>
+                <div id=cell1>
+                    <label for="password"> </label>
+                    <input type="password" id="password" placeholder="YourPassword">
+                    <label for="website"> </label>
+                    <input type="text" id="website" placeholder="Website">
+                    <div id=key>
+                        Birthday
+                    </div>
+                </div>
+                <div id=cell1>
+                    <label for="birthday"> </label>
+                    <input type="date" id="birthday">
+                </div>
+                <div id=cell1>
+                    <input type="checkbox" id="gender" name="female">
+                    <label for="gender"> Female</label>
+
+                    <input type="checkbox" id="gender" name="male"> <label for="gender"> Male </label>
+                    <input type="checkbox" id="gender" name="other" checked="checked"><label for="gender"> Other
+                    </label>
+                </div>
+                <div id=reset>
+                    <input type="reset" value="Clear Form">
+                </div>
+            </fieldset>
+
+
+
+            <!-- right table -->
+            <fieldset id=table2>
+                <legend><strong>Important Information *required</strong></legend>
+                <div id=cell1>
+                    <select>
+                        <option selected="selected">Country </option>
+                        <option value="United States">United States</option>
+                        <option value="India">India</option>
+                    </select>
+
+                    <label for="village"> </label>
+                    <input type="text" id="village" placeholder="Village">
+                    <label for="district"> </label>
+                    <input type="text" id="district" placeholder="District">
+                </div>
+
+                <div id=cell1>
+                    <label for="street"> </label>
+                    <input type="text" id="street" placeholder="Street">
+
+                    <label for="nr"> </label>
+                    <input type="text" id="nr" placeholder="Nr" size="8">
+
+                    <label for="floor"> </label>
+                    <input type="text" id="floor" placeholder="Floor" size="8">
+
+                    <label for="aptnr"> </label>
+                    <input type="text" id="aptnr" placeholder="Ap Nr" size="8">
+                </div>
+                <div id=key2>
+                    Door Color
+                </div>
+                <div id=cell1>
+                    <input type="color" value="#FF69B4" id="colorPicker">
+
+                    <label for="watermeternr"> </label>
+                    <input type="text" id="watermeternr" placeholder="Water Meter Nr">
+
+                    <label for="auntpantiessize"></label>
+
+                    <select>
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                        <option value="xlarge">XLarge</option>
+                    </select>
+
+                </div>
+
+                <div id=cell1>
+                    <div id=key>
+                        More Personal Information
+                    </div>
+                </div>
+                <div id=cell1>
+                    <textarea placeholder="Give us more information!!!"></textarea>
+                </div>
+
+
+                <div id=register>
+                    <button type="submit" class="registration">Register</button>
+                </div>
+            </fieldset>
+
+        </form>
+    </div>
+
 
 </body>
 

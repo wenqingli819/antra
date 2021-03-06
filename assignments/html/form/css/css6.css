@@ -1,0 +1,48 @@
+.form {
+    height:500px;
+    width: 1200px;
+}
+fieldset {
+    margin-right:20px;
+}
+
+
+#title{
+    margin-left:30px;
+    text-shadow: 1px 0 black;
+    font-weight:bold;
+    font-size: 30px;
+}
+
+
+
+#table1{
+    margin-left: 10px;
+    float: left;
+    width:35%;
+    border:transparent;
+}
+#table2{
+    color:black;
+    clear:right;
+    width:200px;
+    height:550px;
+    border: 1px solid lightblue;
+
+    /* align-center */
+    display: block;
+    text-align: center;
+}
+
+img {
+    border: 1px solid lightblue;
+    border-radius: 10px;
+  }
+
+input[type="range"] {
+    width:200px;
+
+}
+#key {
+    font-size:20px;
+}
