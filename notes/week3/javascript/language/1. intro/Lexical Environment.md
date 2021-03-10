@@ -27,3 +27,36 @@ The global Lexical Environment has no outer reference, that’s why the arrow po
 
 ### 2. Function Declarations
 
+A function is also a value, like a variable.
+
+**Function Declaration is instantly fully initialized.**
+
+we can use a function even before its declaration.
+
+
+
+### 3. Inner and outer Lexical Environment
+
+
+
+### 4. returning a function
+
+```javascript
+function makeCounter() {
+  let count = 0;
+
+  return function() {
+    return count++;
+  };
+}
+
+let counter = makeCounter();
+```
+
+
+
+**Closure**
+
+There is a general programming term “closure”, that developers generally should know.
+
+A [closure](https://en.wikipedia.org/wiki/Closure_(computer_programming)) is a function that remembers its outer variables and can access them. In some languages, that’s not possible, or a function should be written in a special way to make it happen.
