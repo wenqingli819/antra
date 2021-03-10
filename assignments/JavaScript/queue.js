@@ -9,27 +9,28 @@
 
 
 function Queue() {
+    this.length = 0;
     let storage = [],
         head = 0,
         tail = 0;
-    let length = 0;
+
 
     this.enqueue = function (item) {
         storage[tail++] = item;
-        length++;
+        this.length++;
     }
 
     this.dequeue = function () {
-        if (length <= 0) {
+        if (this.length <= 0) {
             return undefined;
         }
         delete storage[head++];   //remove first element
-        length--;
-        console.log(length)
+        this.length--;
+        console.log(this.length)
     }
 
     this.peek = function () {
-        console.log(storage[length - 1])
+        console.log(storage[this.length - 1])
     }
 
     this.print = function () {
