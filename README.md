@@ -28,7 +28,18 @@
 ### Front-end
 
 - #### HTML & CSS
+
 - #### JavaScript
+
+  - Fundamentals
+  - Functions
+    - Callbacks & Closures
+  - DOM
+  - Events
+  - Local storage and Session storage, Cookies
+  - Promise
+  - Async and Await
+
 - #### Angular
 
 ### Back-end
