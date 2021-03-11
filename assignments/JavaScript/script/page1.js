@@ -26,7 +26,7 @@ async function getAlbums() {
         tbody.innerHTML = "";
         let length = data.length;
         for (let i = 0; i < length; i++) {
-            let tr = `<tr><td><a href="http://localhost:5500/typora/antra/assignments/JavaScript/practiceAPI.html#${data[i].userId}">${data[i].userId}</a></td><td>${data[i].id}</td><td>${data[i].title}</td></tr>`
+            let tr = `<tr><td><a href="http://localhost:5500/typora/antra/assignments/JavaScript/page2.html#${data[i].userId}">${data[i].userId}</a></td><td>${data[i].id}</td><td>${data[i].title}</td></tr>`
 
             tbody.innerHTML = tbody.innerHTML + tr;
         }
