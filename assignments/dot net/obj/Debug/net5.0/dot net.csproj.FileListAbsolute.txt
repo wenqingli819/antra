@@ -1,0 +1,16 @@
+/mnt/c/Users/wenqi/OneDrive/Desktop/ShareToMac/code-workspace/typora/antra/assignments/dot net/obj/Debug/net5.0/dot net.csprojAssemblyReference.cache
+/mnt/c/Users/wenqi/OneDrive/Desktop/ShareToMac/code-workspace/typora/antra/assignments/dot net/obj/Debug/net5.0/dot net.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/c/Users/wenqi/OneDrive/Desktop/ShareToMac/code-workspace/typora/antra/assignments/dot net/obj/Debug/net5.0/dot net.AssemblyInfoInputs.cache
+/mnt/c/Users/wenqi/OneDrive/Desktop/ShareToMac/code-workspace/typora/antra/assignments/dot net/obj/Debug/net5.0/dot net.AssemblyInfo.cs
+/mnt/c/Users/wenqi/OneDrive/Desktop/ShareToMac/code-workspace/typora/antra/assignments/dot net/obj/Debug/net5.0/dot net.csproj.CoreCompileInputs.cache
+/mnt/c/Users/wenqi/OneDrive/Desktop/ShareToMac/code-workspace/typora/antra/assignments/dot net/bin/Debug/net5.0/dot net
+/mnt/c/Users/wenqi/OneDrive/Desktop/ShareToMac/code-workspace/typora/antra/assignments/dot net/bin/Debug/net5.0/dot net.deps.json
+/mnt/c/Users/wenqi/OneDrive/Desktop/ShareToMac/code-workspace/typora/antra/assignments/dot net/bin/Debug/net5.0/dot net.runtimeconfig.json
+/mnt/c/Users/wenqi/OneDrive/Desktop/ShareToMac/code-workspace/typora/antra/assignments/dot net/bin/Debug/net5.0/dot net.runtimeconfig.dev.json
+/mnt/c/Users/wenqi/OneDrive/Desktop/ShareToMac/code-workspace/typora/antra/assignments/dot net/bin/Debug/net5.0/dot net.dll
+/mnt/c/Users/wenqi/OneDrive/Desktop/ShareToMac/code-workspace/typora/antra/assignments/dot net/bin/Debug/net5.0/ref/dot net.dll
+/mnt/c/Users/wenqi/OneDrive/Desktop/ShareToMac/code-workspace/typora/antra/assignments/dot net/bin/Debug/net5.0/dot net.pdb
+/mnt/c/Users/wenqi/OneDrive/Desktop/ShareToMac/code-workspace/typora/antra/assignments/dot net/obj/Debug/net5.0/dot net.dll
+/mnt/c/Users/wenqi/OneDrive/Desktop/ShareToMac/code-workspace/typora/antra/assignments/dot net/obj/Debug/net5.0/ref/dot net.dll
+/mnt/c/Users/wenqi/OneDrive/Desktop/ShareToMac/code-workspace/typora/antra/assignments/dot net/obj/Debug/net5.0/dot net.pdb
+/mnt/c/Users/wenqi/OneDrive/Desktop/ShareToMac/code-workspace/typora/antra/assignments/dot net/obj/Debug/net5.0/dot net.genruntimeconfig.cache
