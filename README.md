@@ -44,8 +44,15 @@
 
 ### Back-end
 
+- ### C#
+
+  - Language Fundamentals
+  - OOP
+  - Generics & Collections
+  - Delegates
+  - LINQ
+
 - #### .Net Framework/Core
-- #### C#
 
 ### Cloud
 

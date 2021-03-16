@@ -22,9 +22,15 @@ namespace Practice
 
         static void Main(string[] args)
         {
+
             for (int i = 1; i < 15; i++)
             {
-                Console.WriteLine($"{i}! = {Factorial(i):N}");
+                try{
+                    Console.WriteLine($"{i}! = {Factorial(i):N}");
+                } catch(System.OverflowException){
+                    System.Console.WriteLine( $"{i}! is too big for a 32-bit integer.");
+                }
+
             }
         }
     }
