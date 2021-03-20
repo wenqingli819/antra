@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "hpN0zz+plIRiQqFoZjo0RHcErEr2UeRg1OX0FGGX8TRNd2faqzpzw4u8k6ES7Adwmy0v82FeXHNKjErhUSMV+A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\wenqi\\OneDrive\\Desktop\\ShareToMac\\code-workspace\\typora\\antra\\CSharpPrac\\DelegatePrac\\DelegatePrac.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\wenqi\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.0\\microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

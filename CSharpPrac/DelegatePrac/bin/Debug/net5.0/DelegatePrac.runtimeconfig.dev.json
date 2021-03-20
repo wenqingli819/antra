@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/Users/babydeveloper/.dotnet/store/|arch|/|tfm|",
+      "/Users/babydeveloper/.nuget/packages"
+    ]
+  }
+}

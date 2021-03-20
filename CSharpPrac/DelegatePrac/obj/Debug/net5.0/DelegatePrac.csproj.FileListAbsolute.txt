@@ -1,0 +1,15 @@
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/bin/Debug/net5.0/DelegatePrac.deps.json
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/bin/Debug/net5.0/DelegatePrac.runtimeconfig.json
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/bin/Debug/net5.0/DelegatePrac.runtimeconfig.dev.json
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/bin/Debug/net5.0/DelegatePrac.dll
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/bin/Debug/net5.0/ref/DelegatePrac.dll
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/bin/Debug/net5.0/DelegatePrac.pdb
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/obj/Debug/net5.0/DelegatePrac.csprojAssemblyReference.cache
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/obj/Debug/net5.0/DelegatePrac.GeneratedMSBuildEditorConfig.editorconfig
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/obj/Debug/net5.0/DelegatePrac.AssemblyInfoInputs.cache
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/obj/Debug/net5.0/DelegatePrac.AssemblyInfo.cs
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/obj/Debug/net5.0/DelegatePrac.csproj.CoreCompileInputs.cache
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/obj/Debug/net5.0/DelegatePrac.dll
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/obj/Debug/net5.0/ref/DelegatePrac.dll
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/obj/Debug/net5.0/DelegatePrac.pdb
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/obj/Debug/net5.0/DelegatePrac.genruntimeconfig.cache

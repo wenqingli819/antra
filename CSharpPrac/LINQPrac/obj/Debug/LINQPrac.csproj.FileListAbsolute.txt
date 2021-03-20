@@ -1,0 +1,12 @@
+/Users/babydeveloper/RiderProjects/CSharpPrac/LINQPrac/bin/Debug/LINQPrac.exe
+/Users/babydeveloper/RiderProjects/CSharpPrac/LINQPrac/bin/Debug/LINQPrac.pdb
+/Users/babydeveloper/RiderProjects/CSharpPrac/LINQPrac/obj/Debug/LINQPrac.csprojAssemblyReference.cache
+/Users/babydeveloper/RiderProjects/CSharpPrac/LINQPrac/obj/Debug/LINQPrac.csproj.CoreCompileInputs.cache
+/Users/babydeveloper/RiderProjects/CSharpPrac/LINQPrac/obj/Debug/LINQPrac.exe
+/Users/babydeveloper/RiderProjects/CSharpPrac/LINQPrac/obj/Debug/LINQPrac.pdb
+C:\Users\wenqi\OneDrive\Desktop\ShareToMac\code-workspace\typora\antra\CSharpPrac\LINQPrac\bin\Debug\LINQPrac.exe
+C:\Users\wenqi\OneDrive\Desktop\ShareToMac\code-workspace\typora\antra\CSharpPrac\LINQPrac\bin\Debug\LINQPrac.pdb
+C:\Users\wenqi\OneDrive\Desktop\ShareToMac\code-workspace\typora\antra\CSharpPrac\LINQPrac\obj\Debug\LINQPrac.csprojAssemblyReference.cache
+C:\Users\wenqi\OneDrive\Desktop\ShareToMac\code-workspace\typora\antra\CSharpPrac\LINQPrac\obj\Debug\LINQPrac.csproj.CoreCompileInputs.cache
+C:\Users\wenqi\OneDrive\Desktop\ShareToMac\code-workspace\typora\antra\CSharpPrac\LINQPrac\obj\Debug\LINQPrac.exe
+C:\Users\wenqi\OneDrive\Desktop\ShareToMac\code-workspace\typora\antra\CSharpPrac\LINQPrac\obj\Debug\LINQPrac.pdb

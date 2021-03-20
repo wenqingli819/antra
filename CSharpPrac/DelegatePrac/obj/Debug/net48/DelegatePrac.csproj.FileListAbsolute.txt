@@ -1,0 +1,9 @@
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/bin/Debug/net48/DelegatePrac.exe.config
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/bin/Debug/net48/DelegatePrac.exe
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/bin/Debug/net48/DelegatePrac.pdb
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/obj/Debug/net48/DelegatePrac.csprojAssemblyReference.cache
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/obj/Debug/net48/DelegatePrac.AssemblyInfoInputs.cache
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/obj/Debug/net48/DelegatePrac.AssemblyInfo.cs
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/obj/Debug/net48/DelegatePrac.csproj.CoreCompileInputs.cache
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/obj/Debug/net48/DelegatePrac.exe
+/Users/babydeveloper/RiderProjects/CSharpPrac/DelegatePrac/obj/Debug/net48/DelegatePrac.pdb
