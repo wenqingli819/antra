@@ -4,11 +4,9 @@
 
 https://www.sqlservertutorial.net/
 
-https://en.wikipedia.org/wiki/Category:SQL
+[instnwnd.sql](https://raw.githubusercontent.com/microsoft/sql-server-samples/master/samples/databases/northwind-pubs/instnwnd.sql)
 
-https://en.wikibooks.org/wiki/SQL_Exercises
-
-[Educative](https://www.educative.io/courses/database-design-fundamentals/gx2GRZOq31j)
+[AdventureWorks](https://dataedo.com/samples/html/AdventureWorks/doc/AdventureWorks_2/modules/Sales_12/tables/Sales_SalesOrderHeader_185.html)
 
 [CMUDatabaseGroup](https://www.youtube.com/watch?v=mYFo1aE47xE&ab_channel=CMUDatabaseGroup)
 
@@ -22,9 +20,10 @@ https://en.wikibooks.org/wiki/SQL_Exercises
 
 ### Back-end
 
-- #### .Net Framework/Core
+- #### C# and .Net Core
 
-- #### C#
+  - https://docs.microsoft.com/en-us/samples/browse/?redirectedfrom=MSDN-samples
+  - https://www.c-sharpcorner.com/article/dapper-and-repository-pattern-in-web-api/
 
 ### Cloud
 
