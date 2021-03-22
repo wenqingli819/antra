@@ -9,20 +9,30 @@ namespace MovieShop.UI
 {
     class ManageCast
     {
-        private readonly CastService castService;
+        private readonly CastRepo castRepo;
 
         public ManageCast()
         {
-            CastService castService = new CastService();
+            castRepo = new CastRepo();
         }
 
         void PrintAll()
         {
-            // Object reference not set to an instance of an object.
-            IEnumerable<Cast> casts = (IEnumerable<Cast>)castService.GetAllAsync();
-            foreach (var item in casts)
+            IEnumerable<Cast> casts = (IEnumerable<Cast>)castRepo.GetAllAsync();     // if without the cast, it will show error too, "are you missing a cast?"
+            //Unhandled exception. System.InvalidCastException: 
+            //Unable to cast object of type 'AsyncStateMachineBox`1[System.Collections.Generic.IEnumerable`1[MovieShop.Entity.Cast],
+            //                                                      MovieShop.Repository.CastRepo+<GetAllAsync>d__1]' 
+            // to type 'System.Collections.Generic.IEnumerable`1[MovieShop.Entity.Cast]'.
+            if (casts == null)
             {
-                Console.WriteLine(item.Id + " \t " + item.Name + "\t" + item.@TmdbUrl + "\t" + item.Gender + "\t" + item.ProfilePath);
+                Console.WriteLine("something wrong happened");
+            }
+            else
+            {
+                foreach (var item in casts)
+                {
+                    Console.WriteLine(item.Id + " \t " + item.Name + "\t" + item.@TmdbUrl + "\t" + item.Gender + "\t" + item.ProfilePath);
+                }
             }
         }
 

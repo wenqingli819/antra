@@ -1,5 +1,4 @@
 ﻿using MovieShop.UI;
-using System;
 
 namespace MovieShop
 {
@@ -8,7 +7,8 @@ namespace MovieShop
         static void Main(string[] args)
         {
             ManageCast manageCast = new ManageCast();
-            manageCast.Run();
+            manageCast.Run();  
+
         }
     }
 }

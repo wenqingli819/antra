@@ -12,8 +12,6 @@ namespace MovieShop.Repository
 {
     public class CastRepo : IGenericRepo<Cast>
     {
-        DbHelper dbHelper;
-
         public async Task<bool> DeleteAsync(int id)
         {
             var parameters = new DynamicParameters();
@@ -43,18 +41,18 @@ namespace MovieShop.Repository
 
         public async Task<IEnumerable<Cast>> GetAllAsync()
         {
-            IEnumerable<Cast> casts = Enumerable.Empty<Cast>();
             using (SqlConnection conn = new SqlConnection(DbHelper.connectionString))
             {
                 if (conn.State == ConnectionState.Closed)
                     conn.Open();
                 try
                 {
-                    casts = await conn.QueryAsync<Cast>("spGetAllCasts", commandType: CommandType.StoredProcedure);
+                    var result =  await conn.QueryAsync<Cast>("spGetAllCasts", commandType: CommandType.StoredProcedure);
+                    return result;
                 }
                 catch (Exception ex)
                 {
-                    throw;
+                    throw ex;
                 }
                 finally
                 {
@@ -62,12 +60,6 @@ namespace MovieShop.Repository
                         conn.Close();
                 }
             }
-            foreach (var item in casts)
-            {
-                Console.WriteLine(item);
-            }
-           
-            return casts;
         }
 
 

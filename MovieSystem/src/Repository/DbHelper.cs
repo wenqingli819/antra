@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Data;
-using System.Data.SqlClient;
-
-
-namespace MovieShop.Repository
+﻿namespace MovieShop.Repository
 {
     class DbHelper
     {
