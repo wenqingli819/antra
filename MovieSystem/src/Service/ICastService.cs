@@ -9,12 +9,12 @@ namespace MovieShop.Service
 {
     public interface ICastService
     {
-        Task<IEnumerable<Cast>> GetByIdAsync(int id);
-        Task<IEnumerable<Cast>> GetAllAsync();
+        Task<IEnumerable<FilmCast>> GetByIdAsync(int id);
+        Task<IEnumerable<FilmCast>> GetAllAsync();
 
 
-        Task<bool> InsertAsync(Cast item);
-        Task<bool> UpdateAsync(Cast item, int id);
+        Task<bool> InsertAsync(FilmCast item);
+        Task<bool> UpdateAsync(FilmCast item, int id);
         Task<bool> DeleteAsync(int id);
     }
 }

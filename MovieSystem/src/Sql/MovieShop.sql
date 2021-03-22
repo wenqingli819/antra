@@ -57,7 +57,7 @@ create table dbo.MovieGenre(
 )
 GO
 
-create table dbo.Cast(  
+create table dbo.FilmCast(  
 	Id int IDENTITY (1, 1),
 	Name nvarchar(128),
     TmdbUrl nvarchar(MAX),
@@ -89,7 +89,7 @@ create table dbo.MovieCast(
 	CONSTRAINT "FK_Movie_Cast_Cast" FOREIGN KEY 
 	(
 		CastId
-	) REFERENCES "dbo"."Cast" (
+	) REFERENCES "dbo"."FilmCast" (
 		Id
 	)
 )

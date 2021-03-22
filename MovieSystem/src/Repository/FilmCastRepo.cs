@@ -10,7 +10,7 @@ using System.Data;
 
 namespace MovieShop.Repository
 {
-    public class CastRepo : IGenericRepo<Cast>
+    public class FilmCastRepo : IGenericRepo<FilmCast>
     {
         public async Task<bool> DeleteAsync(int id)
         {
@@ -35,47 +35,45 @@ namespace MovieShop.Repository
                 }
             }
             return true;
-            
+
         }
 
 
-        public async Task<IEnumerable<Cast>> GetAllAsync()
+        public async Task<IEnumerable<FilmCast>> GetAllAsync()
         {
-            using (SqlConnection conn = new SqlConnection(DbHelper.connectionString))
+            using SqlConnection conn = new SqlConnection(DbHelper.connectionString);
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
+            try
             {
-                if (conn.State == ConnectionState.Closed)
-                    conn.Open();
-                try
-                {
-                    var result =  await conn.QueryAsync<Cast>("spGetAllCasts", commandType: CommandType.StoredProcedure);
-                    return result;
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-                finally
-                {
-                    if (conn.State == ConnectionState.Open)
-                        conn.Close();
-                }
+                var result = await conn.QueryAsync<FilmCast>("spGetAllCasts", commandType: CommandType.StoredProcedure);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
             }
         }
 
 
-        public async Task<IEnumerable<Cast>> GetByIdAsync(int id)
+        public async Task<IEnumerable<FilmCast>> GetByIdAsync(int id)
         {
             var parameters = new DynamicParameters();
             parameters.Add("Id", id, DbType.Int32);
 
-            Cast cast = new Cast();
+            FilmCast cast = new FilmCast();
             using (SqlConnection conn = new SqlConnection(DbHelper.connectionString))
             {
                 if (conn.State == ConnectionState.Closed)
                     conn.Open();
                 try
                 {
-                    cast = await conn.QueryFirstOrDefaultAsync<Cast>("spGetCastByID", parameters, commandType: CommandType.StoredProcedure);
+                    cast = await conn.QueryFirstOrDefaultAsync<FilmCast>("spGetCastByID", parameters, commandType: CommandType.StoredProcedure);
                 }
                 catch (Exception ex)
                 {
@@ -87,19 +85,19 @@ namespace MovieShop.Repository
                         conn.Close();
                 }
             }
-            return (IEnumerable<Cast>)cast;
+            return (IEnumerable<FilmCast>)cast;
         }
 
-        public async Task<bool> InsertAsync(Cast item)
+        public async Task<bool> InsertAsync(FilmCast item)
         {
             using (SqlConnection conn = new SqlConnection(DbHelper.connectionString))
             {
-                var query = "insert into dbo.Cast(Name,Gender,TmdbUrl,ProfilePath) Values (@Name,@Gender,@TmdbUrl,@ProfilePath)";
+                var query = "insert into dbo.FilmCast(Name,Gender,TmdbUrl,ProfilePath) Values (@Name,@Gender,@TmdbUrl,@ProfilePath)";
                 if (conn.State == ConnectionState.Closed)
                     conn.Open();
                 try
                 {
-                    await conn.ExecuteAsync(query, new { item.Name, item.Gender,item.TmdbUrl,item.ProfilePath}, commandType: CommandType.Text);
+                    await conn.ExecuteAsync(query, new { item.Name, item.Gender, item.TmdbUrl, item.ProfilePath }, commandType: CommandType.Text);
                 }
                 catch (Exception ex)
                 {
@@ -113,9 +111,9 @@ namespace MovieShop.Repository
             }
             return true;
         }
-        
 
-        public async Task<bool> UpdateAsync(Cast item, int id)
+
+        public async Task<bool> UpdateAsync(FilmCast item, int id)
         {
             var parameters = new DynamicParameters();
             parameters.Add("Id", id, DbType.Int32);
@@ -126,7 +124,7 @@ namespace MovieShop.Repository
 
             using (SqlConnection conn = new SqlConnection(DbHelper.connectionString))
             {
-                var result = new Cast();
+                var result = new FilmCast();
                 if (conn.State == ConnectionState.Closed)
                 {
                     conn.Open();
@@ -135,13 +133,13 @@ namespace MovieShop.Repository
                 {
                     await conn.ExecuteAsync("spUpdateCast", parameters, commandType: CommandType.StoredProcedure);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     throw ex;
                 }
                 finally
                 {
-                    if(conn.State == ConnectionState.Open)
+                    if (conn.State == ConnectionState.Open)
                     {
                         conn.Close();
                     }
