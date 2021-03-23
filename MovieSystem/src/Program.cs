@@ -6,7 +6,7 @@ namespace MovieShop
     {
         static void Main(string[] args)
         {
-            ManageCast manageCast = new ManageCast();
+            ManageFilmCast manageCast = new ManageFilmCast();
             manageCast.Run();  
 
         }

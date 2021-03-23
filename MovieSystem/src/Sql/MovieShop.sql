@@ -57,7 +57,7 @@ create table dbo.MovieGenre(
 )
 GO
 
-create table dbo.FilmCast(  
+create table dbo.Cast(  
 	Id int IDENTITY (1, 1),
 	Name nvarchar(128),
     TmdbUrl nvarchar(MAX),
@@ -69,6 +69,9 @@ create table dbo.FilmCast(
 	)  
 ) 
 GO
+
+
+
 
 create table dbo.MovieCast(
 	MovieId int not null,   
@@ -89,11 +92,18 @@ create table dbo.MovieCast(
 	CONSTRAINT "FK_Movie_Cast_Cast" FOREIGN KEY 
 	(
 		CastId
-	) REFERENCES "dbo"."FilmCast" (
+	) REFERENCES "dbo"."Cast" (
 		Id
 	)
 )
 GO
+
+
+ALTER TABLE [MovieShop].[dbo].MovieCast DROP CONSTRAINT "FK_Movie_Cast_Cast"
+
+ALTER TABLE [MovieShop].[dbo].MovieCast WITH NOCHECK ADD CONSTRAINT "FK_Movie_Cast_Cast" FOREIGN KEY(CastId)
+REFERENCES "dbo"."Cast" (Id)
+ON DELETE CASCADE
 
 create table dbo."User"(
 	 Id int IDENTITY (1, 1),

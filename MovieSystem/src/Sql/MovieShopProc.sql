@@ -8,29 +8,34 @@ create proc [dbo].spUpdateCast
     @Gender nvarchar(MAX) ,   
     @ProfilePath nvarchar(2084)
 as
-	update dbo.FilmCast 
+	update dbo.Cast 
 	set Name=@Name, Gender=@Gender, TmdbUrl=@TmdbUrl, ProfilePath=@ProfilePath
 	where Id = @Id
 GO
 
-create proc [dbo].spDeleteCast
+create proc [dbo].spDeleteCastByID
 	@Id int
 as
-	delete from dbo.FilmCast where Id = @Id
+	delete from dbo.Cast where Id = @Id
 GO
+
+EXECUTE [dbo].spDeleteCastByID @Id = 35215;   --test ok
 
 
 create proc [dbo].spGetAllCasts
 as
-	select * from dbo.FilmCast 
+	select * from dbo.Cast 
 	order by Id
 GO
 
-EXECUTE [dbo].spGetAllCasts
+EXECUTE [dbo].spGetAllCasts   --test ok
 
 create proc [dbo].spGetCastByID
 	@Id INT  
 AS  
-    SELECT * from dbo.FilmCast
+    SELECT * from dbo.Cast
 	WHERE Id = @Id   
 GO  
+
+
+EXECUTE [dbo].spGetCastByID @Id = 1;   --test ok
