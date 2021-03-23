@@ -144,7 +144,7 @@ namespace MovieShop.UI
         }
 
 
-        #region simple method without procedure to test the GetAllCasts method with dapper
+        #region simple method without procedure to test the GetAllCasts method with dapper      <<<<<<-- it doesn't work      :(
         public async Task<IEnumerable<FilmCast>> GetAllAsyncWithDapperSimpleQuery()
         {
             using SqlConnection conn = new SqlConnection(DbHelper.connectionString);

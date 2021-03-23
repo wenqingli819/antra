@@ -51,6 +51,7 @@
   - Generics & Collections
   - Delegates
   - LINQ
+  - Dapper + Async Method
 
 - #### .Net Framework/Core
 
