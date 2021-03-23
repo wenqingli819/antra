@@ -13,6 +13,8 @@ as
 	where Id = @Id
 GO
 
+EXECUTE [dbo].spUpdateCast @Id = 35214, @Name = "life is hard", @Gender = "female", @TmdbUrl = "something", @ProfilePath = "some other thing";   --test ok 
+
 create proc [dbo].spDeleteCastByID
 	@Id int
 as

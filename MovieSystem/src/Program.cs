@@ -6,8 +6,14 @@ namespace MovieShop
     {
         static void Main(string[] args)
         {
-            ManageFilmCast manageCast = new ManageFilmCast();
-            manageCast.Run();  
+            ManageFilmCast manageFilmCast = new ManageFilmCast();
+            manageFilmCast.Run();
+
+            async System.Threading.Tasks.Task testAsync() {
+                await manageFilmCast.GetAllAsyncWithDapperSimpleQuery();
+            }
+
+            testAsync();
 
         }
     }
