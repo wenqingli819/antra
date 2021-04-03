@@ -51,9 +51,16 @@
   - Generics & Collections
   - Delegates
   - LINQ
-  - Dapper + Async Method
 
 - #### .Net Framework/Core
+
+  - Dapper + Async Method
+  - Entity Framework
+  - MVC
+  - Razor view
+  - Security
+  - REST API
+  - Unit Test
 
 ### Cloud
 
