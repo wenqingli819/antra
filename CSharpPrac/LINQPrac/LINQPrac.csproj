@@ -39,9 +39,14 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="data\Instrument.cs" />
+        <Compile Include="data\Musician.cs" />
+        <Compile Include="data\Order.cs" />
         <Compile Include="ExtensionMethod.cs" />
+        <Compile Include="GroupJoin.cs" />
         <Compile Include="IEnumerablePrac.cs" />
         <Compile Include="IQueryablePrac.cs" />
+        <Compile Include="InnerJoin.cs" />
         <Compile Include="Linq101.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />

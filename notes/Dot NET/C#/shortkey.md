@@ -8,3 +8,5 @@
 
 
 
+control+shift+b  build solution
+

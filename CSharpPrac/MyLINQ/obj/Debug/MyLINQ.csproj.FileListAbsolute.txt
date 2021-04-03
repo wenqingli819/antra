@@ -1,0 +1,6 @@
+C:\Users\wenqi\OneDrive\Desktop\ShareToMac\code-workspace\typora\antra\CSharpPrac\MyLINQ\obj\Debug\MyLINQ.csprojAssemblyReference.cache
+C:\Users\wenqi\OneDrive\Desktop\ShareToMac\code-workspace\typora\antra\CSharpPrac\MyLINQ\obj\Debug\MyLINQ.csproj.CoreCompileInputs.cache
+C:\Users\wenqi\OneDrive\Desktop\ShareToMac\code-workspace\typora\antra\CSharpPrac\MyLINQ\bin\Debug\MyLINQ.exe
+C:\Users\wenqi\OneDrive\Desktop\ShareToMac\code-workspace\typora\antra\CSharpPrac\MyLINQ\bin\Debug\MyLINQ.pdb
+C:\Users\wenqi\OneDrive\Desktop\ShareToMac\code-workspace\typora\antra\CSharpPrac\MyLINQ\obj\Debug\MyLINQ.exe
+C:\Users\wenqi\OneDrive\Desktop\ShareToMac\code-workspace\typora\antra\CSharpPrac\MyLINQ\obj\Debug\MyLINQ.pdb

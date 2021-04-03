@@ -14,6 +14,8 @@ https://www.codewars.com/collections/linq-exercises
 
 Examples
 
+[C# sample code from Microsoft doc](https://docs.microsoft.com/en-us/samples/browse/?redirectedfrom=MSDN-samples)
+
 [.NET Fiddle](https://dotnetfiddle.net/GettingStarted/) 
 
 - online compiler. It allows you to create, run and share your code online.
