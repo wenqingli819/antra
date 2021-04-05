@@ -1,1 +1,0 @@
-![MicrosoftTeams-image](../../../../../resources/MicrosoftTeams-image.png)

@@ -6,6 +6,8 @@ razor view
 
 ### View Rules
 
+- Action method name in controller = view name
+
 - every view has only one model
 
 - View
@@ -14,17 +16,31 @@ razor view
 
     ![image-20210403132800120](../../../../resources/image-20210403132800120.png) @RenderBody is the placeholder for the particular view you want to show
 
-- PartialView => reusable view
+- ### PartialView 
 
   `_xx`
 
-  ​	reuse any UI view in another
+  for simple UI senarios, static 
 
-  ​	for simple UI senarios, static 
+  it is a view inside of another view
 
-- [ASP.NET Core MVC Components](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components?view=aspnetcore-5.0)
+  responsible for render the data for the parent view 
 
-  ​	more complex UI and data driven scenarios
+  ==remember==
+
+  - we don't directly call them, gonna use that inside of another view
+
+  ##### example
+
+  _MovieCard
+
+  properties: movieid, title, posterurl
+
+  
+
+- ### [ASP.NET Core MVC Components](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components?view=aspnetcore-5.0)
+
+  ​	for more complex UI and data driven scenarios
 
   ​	examples:
   - Dynamic navigation menus
@@ -43,3 +59,24 @@ razor view
 
 put reusable UI components or partial view
 
+
+
+
+
+
+
+![image-20210403141503933](../../../../resources/image-20210403141503933.png)
+
+1. create a ViewComponent classs : ViewComponent
+
+   similar to controllers
+
+   DI, constructor
+
+![image-20210403143903809](../../../../resources/image-20210403143903809.png)
+
+**THINK**: Who should call this method?
+
+(header) Layout
+
+![image-20210403144615564](../../../../resources/image-20210403144615564.png)

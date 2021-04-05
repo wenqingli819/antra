@@ -1,10 +1,22 @@
-can we make this class abstract?
-
-real world example of abstract classes?
-
-![image-20210403013630780](../../../resources/image-20210403013630780.png)
+![image-20210404225041771](../../../resources/image-20210404225041771.png)
 
 
 
+![image-20210405014932787](../../../resources/image-20210405014932787.png)
 
+
+
+![image-20210405092104338](../../../resources/image-20210405092104338.png)
+
+![image-20210405092041972](../../../resources/image-20210405092041972.png)
+
+
+
+
+
+![image-20210405100516259](../../../resources/image-20210405100516259.png)
+
+
+
+![image-20210405105216420](../../../resources/image-20210405105216420.png)
 

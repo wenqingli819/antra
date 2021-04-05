@@ -1,2 +1,8 @@
 resources/
 notes/draft/
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages

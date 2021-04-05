@@ -10,5 +10,7 @@ use attribute to enhance entities is one way
 
 
 
-### Fluent API
+### Endpoint
+
+handle the incoming request, produce the response in an `action`
 
