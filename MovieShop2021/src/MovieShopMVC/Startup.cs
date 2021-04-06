@@ -1,13 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ApplicationCore.Entities;
+using ApplicationCore.RepositoryInterfaces;
+using ApplicationCore.ServiceInterfaces;
+using Infrastructure.Repositories;
+using Infrastructure.Data;
+using Infrastructure.Helpers;
+using Infrastructure.Services;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace MovieShopMVC
 {
@@ -20,10 +25,19 @@ namespace MovieShopMVC
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        //This method gets called by the runtime.Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<MovieShopDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("MovieShopDbConnection")));
+
             services.AddControllersWithViews();
+            services.AddScoped<IMovieService, MovieService>(); //AddTransient
+            services.AddScoped<IMovieRepository, MovieRepository>();
+            services.AddScoped<IAsyncRepository<Genre>, EfRepository<Genre>>();
+            services.AddScoped<IGenreService, GenreService>();
+            services.AddAutoMapper(typeof(Startup), typeof(MovieShopMappingProfile)); //https://docs.automapper.org/en/latest/Understanding-your-mapping.html
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,0 +1,55 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Infrastructure.Services;
+using ApplicationCore.Models.Response;
+using ApplicationCore.Models.Request;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using ApplicationCore.ServiceInterfaces;
+
+
+namespace MovieShopMVC.Controllers
+{
+    public class MoviesController : Controller
+    {
+        private readonly IMovieService _movieService;
+
+        public MoviesController(IMovieService movieService)
+        {
+            _movieService = movieService;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            // it will look for a view with name called Index(because the action method name is index)
+
+            // passing data from controller to view, it has three options:
+            // 1.ViewBag 2. ViewData 3. ** Strongly Typed Models
+            // ref: https://www.c-sharpcorner.com/article/passing-data-from-controller-to-view-part-one/
+            var topGrossingMovies = await _movieService.Get30HighestGrossing();
+            return View(topGrossingMovies);
+        }
+
+        // we want to show blank page with empty form 
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // revieve movie information from view then submit
+        [HttpPost]
+        public IActionResult Create(MovieCreateRequestModel model)
+        {
+            _movieService.CreateMovie(model);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(id)
+        {
+            // call movie service to call the details of the movie that includes details, cast, and rating
+            return View();
+        }
+    }
+}

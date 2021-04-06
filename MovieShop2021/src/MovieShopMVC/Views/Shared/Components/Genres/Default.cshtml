@@ -1,0 +1,8 @@
+﻿@model IEnumerable<ApplicationCore.Models.Response.GenreModel>
+
+   @*ref:https://getbootstrap.com/docs/4.6/components/dropdowns/#dropdownMenuLink:~:text=The%20best%20part%20is%20you%20can%20do%20this%20with%20any%20button%20variant%2C%20too%3A*@
+
+@foreach (var genre in Model)
+{
+    <a asp-action="ByGenre" asp-controller="Movies" class="dropdown-item" asp-route-id="@genre.Id"> @genre.Name</a>
+}
