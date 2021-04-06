@@ -107,8 +107,8 @@ namespace Infrastructure.Data
         {
             builder.ToTable("MovieCast");
             builder.HasKey(mc => new { mc.CastId, mc.MovieId, mc.Character });
-            builder.HasOne(mc => mc.Movie).WithMany(mc => mc.MovieCasts).HasForeignKey(mc => mc.MovieId);
-            builder.HasOne(mc => mc.Cast).WithMany(mc => mc.MovieCasts).HasForeignKey(mc => mc.CastId);
+            builder.HasOne(mc => mc.Movies).WithMany(mc => mc.MovieCasts).HasForeignKey(mc => mc.MovieId);
+            builder.HasOne(mc => mc.Casts).WithMany(mc => mc.MovieCasts).HasForeignKey(mc => mc.CastId);
         }
 
         private void ConfigureRole(EntityTypeBuilder<Role> builder)

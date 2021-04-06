@@ -67,8 +67,8 @@ namespace Infrastructure.Repositories
         {
             var movie = await _dbContext.Movies
                         .Include(m => m.MovieCasts)
-                        .ThenInclude(m=>m.Cast)
-                        .Include(m=>m.Genres)
+                        .ThenInclude(mc=>mc.Casts)
+                        //.Include(m=>m.Genres)              // <<< got null in here, why?
                         .FirstOrDefaultAsync(m => m.Id == id);
             if (movie == null)
             {

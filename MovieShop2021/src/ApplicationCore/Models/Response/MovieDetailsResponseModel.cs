@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using ApplicationCore.Entities;
 using ApplicationCore.ServiceInterfaces;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace ApplicationCore.Models.Response
 {
@@ -19,11 +21,14 @@ namespace ApplicationCore.Models.Response
         public string ImdbUrl { get; set; }
         public string TmdbUrl { get; set; }
         public DateTime? ReleaseDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
         public int? RunTime { get; set; }
         public decimal? Price { get; set; }
         public int FavoritesCount { get; set; }
         public List<CastDetailsResponseModel> Casts { get; set; }
         public List<GenreModel> Genres { get; set; }
+
+        public CastResponseModel CastModel { get; set; }
 
         public class CastResponseModel
         {

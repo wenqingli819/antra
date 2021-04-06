@@ -36,6 +36,8 @@ namespace MovieShopMVC
             services.AddScoped<IMovieRepository, MovieRepository>();
             services.AddScoped<IAsyncRepository<Genre>, EfRepository<Genre>>();
             services.AddScoped<IGenreService, GenreService>();
+            services.AddScoped<ICastRepository, CastRepository>();
+            services.AddScoped<ICastService, CastService>();
             services.AddAutoMapper(typeof(Startup), typeof(MovieShopMappingProfile)); //https://docs.automapper.org/en/latest/Understanding-your-mapping.html
 
         }

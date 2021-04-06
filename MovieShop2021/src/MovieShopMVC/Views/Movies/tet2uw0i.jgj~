@@ -1,7 +1,6 @@
-﻿@model ApplicationCore.Models.Response.MovieDetailsResponseModel
+﻿@model ApplicationCore.Entities.Movie
 @using System.Globalization
 @using ApplicationCore.ServiceInterfaces
-@using System.Collections
 
 <div class="bg-image" style="background-image: url(@Model.BackdropUrl)">
 
@@ -103,7 +102,7 @@
                 <span class="badge badge-pill badge-dark">@Model.ReleaseDate.Value.ToShortDateString()</span>
             </li>
 
-            @*<li class="list-group-item">
+            <li class="list-group-item">
                 <i class="fas fa-hourglass-half mr-2"></i>Run Time
                 <span class="badge badge-pill badge-dark">@Model.RunTime.Value m</span>
             </li>
@@ -113,7 +112,7 @@
                     @NumberFormatInfo.CurrentInfo.CurrencySymbol
                     @Model.Revenue?.ToString("C0")
                 </span>
-            </li>*@
+            </li>
 
             <li class="list-group-item">
                 <i class="fas fa-dollar-sign mr-2"></i> Budget
@@ -136,15 +135,15 @@
         </ul>
     </div>
 
-    <div class="col-4 offset-1">
+    @*<div class="col-4 offset-1">
         <h5>CAST</h5>
 
-        @*<table class="table">
+        <table class="table">
 
             <tbody>
 
 
-                @foreach (var cast in Model?.CastModel)
+                @foreach (var cast in Model?.Casts)
                 {
                     <tr>
                         <td>
@@ -159,7 +158,7 @@
 
 
             </tbody>
-        </table>*@
+        </table>
 
-    </div>
+    </div>*@
 </div>

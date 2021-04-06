@@ -12,16 +12,16 @@ namespace Infrastructure.Helpers
         {
             CreateMap<Movie, MovieCardResponseModel>();
             CreateMap<Cast, CastDetailsResponseModel>()
-                .ForMember(c => c.MovieCardResponseModels, 
+                .ForMember(cd => cd.MovieCardResponseModels, 
                     opt => 
-                        opt.MapFrom(src => GetMoviesForCast(src.MovieCasts)));
+                        opt.MapFrom(src => GetMoviesCasts(src.MovieCasts)));
 
             CreateMap<Movie, MovieDetailsResponseModel>()
                 .ForMember(md => md.Casts,
                     opt =>
                         opt.MapFrom(src => GetCasts(src.MovieCasts)));
-
-
+                //.ForMember(md => md.Genres, opt
+                //    => opt.MapFrom(src => GetMovieGenres(src.MovieGenres)));
         }
 
         private static List<MovieDetailsResponseModel.CastResponseModel> GetCasts(IEnumerable<MovieCast> srcMovieCasts)
@@ -31,29 +31,45 @@ namespace Infrastructure.Helpers
                 movieCast.Add(new MovieDetailsResponseModel.CastResponseModel
                 {
                     Id = cast.CastId,
-                    Gender = cast.Cast.Gender,
-                    Name = cast.Cast.Name,
-                    ProfilePath = cast.Cast.ProfilePath,
-                    TmdbUrl = cast.Cast.TmdbUrl,
+                    Gender = cast.Casts.Gender,
+                    Name = cast.Casts.Name,
+                    ProfilePath = cast.Casts.ProfilePath,
+                    TmdbUrl = cast.Casts.TmdbUrl,
                     Character = cast.Character
+
                 });
 
             return movieCast;
         }
 
-        private List<MovieCardResponseModel> GetMoviesForCast(IEnumerable<MovieCast> srcMovieCasts)
+
+        // cast -> CastDetailsResponseModel (include MovieCardResponseModels)
+        private List<MovieCardResponseModel> GetMoviesCasts(IEnumerable<MovieCast> srcMovieCasts)
         {
             var castMovies = new List<MovieCardResponseModel>();
             foreach (var movie in srcMovieCasts)
+            {
                 castMovies.Add(new MovieCardResponseModel
                 {
                     Id = movie.MovieId,
-                    PosterUrl = movie.Movie.PosterUrl,
-                    Title = movie.Movie.Title
+                    PosterUrl = movie.Movies.PosterUrl,
+                    Title = movie.Movies.Title
                 });
+            }
 
             return castMovies;
         }
+
+        //private List<Genre> GetMovieGenres(IEnumerable<MovieGenre> srcGenres)
+        //{
+        //    var movieGenres = new List<Genre>();
+        //    foreach (var genre in srcGenres)
+        //    {
+        //        movieGenres.Add(new Genre { Id = genre.GenreId, Name = genre.Genres.Name });
+        //    }
+
+        //    return movieGenres;
+        //}
 
 
     }

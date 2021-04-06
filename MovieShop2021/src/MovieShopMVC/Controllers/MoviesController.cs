@@ -50,6 +50,7 @@ namespace MovieShopMVC.Controllers
         {
             // call movie service to call the details of the movie that includes details, cast, and rating
             var details = await _movieService.GetMovieDetailByMovie(id);
+            //var details = await _movieService.GetMovieDetailByMovie2(id);
             return View(details);
         }
     }

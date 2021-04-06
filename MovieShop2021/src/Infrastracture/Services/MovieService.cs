@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using ApplicationCore.Entities;
 using ApplicationCore.Exceptions;
 using ApplicationCore.Models.Request;
 using ApplicationCore.Models.Response;
@@ -14,11 +15,14 @@ namespace Infrastructure.Services
     {
         private readonly IMovieRepository _movieRepository;
         private readonly IMapper _mapper;
+        private readonly ICastService _castService;
 
-        public MovieService(IMovieRepository movieRepository, IMapper mapper)
+
+        public MovieService(IMovieRepository movieRepository, IMapper mapper, ICastService castService)
         {
             _movieRepository = movieRepository;
             _mapper = mapper;
+            _castService = castService;
 
         }
 
@@ -52,9 +56,30 @@ namespace Infrastructure.Services
         {
             var movieDetail = await _movieRepository.GetMovieDetailByMovieId(id);
             if (movieDetail == null) throw new NotFoundException("Movie", id);
-            var response = _mapper.Map<MovieDetailsResponseModel>(movieDetail);    //response=null
-            return response;
+            //var response = _mapper.Map<MovieDetailsResponseModel>(movieDetail);    //response=null
+
+            // for movie facts
+            var response = new MovieDetailsResponseModel();
+            response.ReleaseDate = movieDetail.ReleaseDate;
+            response.Revenue = movieDetail.Revenue;
+            response.Tagline = movieDetail.Tagline;
+            response.Overview = movieDetail.Overview;
+            response.PosterUrl = movieDetail.PosterUrl;
+            response.Title = movieDetail.Title;
+            response.TmdbUrl = movieDetail.TmdbUrl;
+            response.Budget = movieDetail.Budget;
+            response.BackdropUrl = movieDetail.BackdropUrl;
+            response.CreatedDate = movieDetail.CreatedDate;
+            response.Rating = (decimal?)await _movieRepository.GetAvgRatingByMovieId(id);
+
+           // for cast detail
+           var casts = await _castService.GetCastDetailByMovieId(id);
+           // TODO:  put CastDetailModel in MovieDetail Model
+           response.CastModel = casts;
+
+           return response;
         }
+
 
         public async Task<List<MovieCardResponseModel>> GetMoviesByGenre(int id)
         {
