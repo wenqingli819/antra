@@ -29,30 +29,28 @@ namespace Infrastructure.Repositories
             // 3 skip(3-1) * PageSize
         }
 
-        public async Task<IEnumerable<MovieGenre>> GetMoviesByGenreId(int genreId)
+        public async Task<IEnumerable<Movie>> GetMoviesByGenreId(int genreId)
         {
-            var count = await _dbContext.MovieGenres
-                                            .Include(mg=>mg.Movies)
-                                            .Where(mg => mg.GenreId == genreId)
-                                            .CountAsync();
+            var count = await  _dbContext.Genres
+                .Where(g => g.Id == genreId)
+                .Include(g=>g.Movies)
+                .SelectMany(g => g.Movies)
+                .CountAsync();
 
-            if (count == 0)
-            {
-                throw new NotFoundException("NO Movies found for this genre");
-            }
+            if (count == 0) throw new NotFoundException("NO Movies found for this genre");
 
-            var movies = await _dbContext.MovieGenres
-                .Include(mg => mg.Movies)
-                .Where(mg => mg.GenreId == genreId)
-                .OrderByDescending(mg => mg.Movies.Revenue)
-                //.Skip((page-1)*pageSize).Take(pageSize)
+
+            var movies = await _dbContext.Genres
+                .Include(g => g.Movies)
+                .Where(g => g.Id == genreId)
+                .SelectMany(g => g.Movies)
+                .OrderByDescending(m => m.Revenue)
+                //.Skip((page - 1) * pageSize).Take(pageSize)
                 .ToListAsync();
-                        
+
             return movies;
         }
-    
-
-
+        
         public async Task<double> GetAvgRatingByMovieId(int movieId)
         {
             var avgRating = await _dbContext.Reviews
@@ -63,13 +61,16 @@ namespace Infrastructure.Repositories
 
         }
 
-        public async Task<Movie> GetMovieDetailByMovieId(int id)
+
+        public async Task<Movie> GetMovieDetailById(int id)
         {
             var movie = await _dbContext.Movies
-                        .Include(m => m.MovieCasts)
-                        .ThenInclude(mc=>mc.Casts)
-                        //.Include(m=>m.Genres)              // <<< got null in here, why?
-                        .FirstOrDefaultAsync(m => m.Id == id);
+                .Where(m=>m.Id == id)
+                .Include(mg=>mg.Genres)
+                .Include(m => m.MovieCasts)
+                .ThenInclude(mc => mc.Casts)
+                .FirstOrDefaultAsync();
+
             if (movie == null)
             {
                 throw new NotFoundException("Movie Not found");
@@ -79,9 +80,9 @@ namespace Infrastructure.Repositories
                 .Where(r => r.MovieId == id)
                 .DefaultIfEmpty()
                 .AverageAsync(r => r == null ? 0 : r.Rating);
+            if (avgRating > 0) movie.Rating = avgRating;
 
             return movie;
         }
-
     }
 }

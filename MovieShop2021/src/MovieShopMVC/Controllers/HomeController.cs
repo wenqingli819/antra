@@ -12,13 +12,11 @@ namespace MovieShopMVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
         private readonly IMovieService _movieService;
 
         public HomeController(ILogger<HomeController> logger, IMovieService movieService)
         {
-            _logger = logger;
             _movieService = movieService;
         }
         public async Task<IActionResult> Index()

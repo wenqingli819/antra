@@ -22,7 +22,6 @@ namespace Infrastructure.Data
         public DbSet<Favorite> Favorites { get; set; }
         public DbSet<User> Users { get; set; }
 
-        public DbSet <MovieGenre> MovieGenres { get; set; }
 
         protected override void OnModelCreating(ModelBuilder movieBuilder)
         {
@@ -35,18 +34,16 @@ namespace Infrastructure.Data
             movieBuilder.Entity<Purchase>(ConfigurePurchase);
             movieBuilder.Entity<Favorite>(ConfigureFavorites);
             movieBuilder.Entity<Review>(ConfigureReview);
-            movieBuilder.Entity<MovieGenre>(ConfigureMovieGenre);
 
 
-            //movieBuilder.Entity<Movie>().HasMany(m => m.Genres).WithMany(g => g.Movies)
-            //    // table name
-            //    .UsingEntity<Dictionary<string, object>>("MovieGenre",
 
-            //        m => m.HasOne<Genre>().WithMany().HasForeignKey("GenreId"), // table we are referencing, and the fk for that
-            //        g => g.HasOne<Movie>().WithMany().HasForeignKey("MovieId"));
+            movieBuilder.Entity<Movie>().HasMany(m => m.Genres).WithMany(g => g.Movies)
+                .UsingEntity<Dictionary<string, object>>("MovieGenre",
+                    m => m.HasOne<Genre>().WithMany().HasForeignKey("GenreId"),
+                    g => g.HasOne<Movie>().WithMany().HasForeignKey("MovieId"));
 
-            
-            // craete many-to-many relationship
+
+            // create many-to-many relationship
             movieBuilder.Entity<User>().HasMany(u => u.Roles).WithMany(r => r.Users)
                 .UsingEntity<Dictionary<string, object>>("UserRole",
                     u => u.HasOne<Role>().WithMany().HasForeignKey("RoleId"),
@@ -54,18 +51,7 @@ namespace Infrastructure.Data
 
         }
 
-        //many-to-many
-        private void ConfigureMovieGenre(EntityTypeBuilder<MovieGenre> builder)
-        {
-            builder.ToTable("MovieGenre");
-            builder.HasKey(mg => new {mg.MovieId, mg.GenreId});  //composite pk
 
-            //create two one-to-many relationship among tables 
-            builder.HasOne<Movie>(mg=>mg.Movies).WithMany(m => m.MovieGenres).HasForeignKey(("MovieId")); 
-            //every movie has many genres
-            builder.HasOne<Genre>(mg=>mg.Genres).WithMany(g=>g.MovieGenres).HasForeignKey(("GenreId"));
-            //every genre has many movies
-        }
 
         private void ConfigureTraler(EntityTypeBuilder<Trailer> builder)
         {
@@ -129,6 +115,7 @@ namespace Infrastructure.Data
             builder.Property(u => u.HashedPassword).HasMaxLength(1024);
             builder.Property(u => u.PhoneNumber).HasMaxLength(16);
             builder.Property(u => u.Salt).HasMaxLength(1024);
+            builder.HasIndex(u => u.Salt).IsUnique();
             builder.Property(u => u.IsLocked).HasDefaultValue(false);
         }
 

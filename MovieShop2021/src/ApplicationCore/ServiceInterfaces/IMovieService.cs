@@ -13,7 +13,9 @@ namespace ApplicationCore.ServiceInterfaces
 
         Task<List<MovieCardResponseModel>> GetMoviesByGenre(int id);
 
-        Task<double> GetAvgRatingByMovie(int id);
+
+
+       Task<double> GetAvgRatingByMovie(int id);
 
         Task<MovieDetailsResponseModel> GetMovieDetailByMovie(int id);
 

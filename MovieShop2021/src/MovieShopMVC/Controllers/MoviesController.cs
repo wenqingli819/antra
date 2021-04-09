@@ -39,7 +39,8 @@ namespace MovieShopMVC.Controllers
             _movieService.CreateMovie(model);
             return RedirectToAction("Index");
         }
-        public async Task<IActionResult> ByGenre(int id)
+
+        public async Task<IActionResult> Genre(int id)
         {
             var movies = await _movieService.GetMoviesByGenre(id);
             return View(movies);

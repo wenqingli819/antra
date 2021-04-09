@@ -7,27 +7,25 @@ using ApplicationCore.Models.Request;
 using ApplicationCore.Models.Response;
 using ApplicationCore.RepositoryInterfaces;
 using ApplicationCore.ServiceInterfaces;
-using AutoMapper;
+
 
 namespace Infrastructure.Services
 {
     public class MovieService : IMovieService
     {
         private readonly IMovieRepository _movieRepository;
-        private readonly IMapper _mapper;
-        private readonly ICastService _castService;
 
 
-        public MovieService(IMovieRepository movieRepository, IMapper mapper, ICastService castService)
+        public MovieService(IMovieRepository movieRepository)
         {
             _movieRepository = movieRepository;
-            _mapper = mapper;
-            _castService = castService;
 
         }
 
         public Task CreateMovie(MovieCreateRequestModel model)
         {
+            // take model and convert it to Movie Entity and send it to repository
+            // if repository saves successfully return true/id:2
             throw new NotImplementedException();
         }
 
@@ -46,6 +44,7 @@ namespace Infrastructure.Services
             return result;
         }
 
+
         public async Task<double> GetAvgRatingByMovie(int id)
         {
             var avgRating = await _movieRepository.GetAvgRatingByMovieId(id);
@@ -54,30 +53,58 @@ namespace Infrastructure.Services
 
         public async Task<MovieDetailsResponseModel> GetMovieDetailByMovie(int id)
         {
-            var movieDetail = await _movieRepository.GetMovieDetailByMovieId(id);
+            var movieDetail = await _movieRepository.GetMovieDetailById(id);
+
             if (movieDetail == null) throw new NotFoundException("Movie", id);
-            //var response = _mapper.Map<MovieDetailsResponseModel>(movieDetail);    //response=null
 
-            // for movie facts
-            var response = new MovieDetailsResponseModel();
-            response.ReleaseDate = movieDetail.ReleaseDate;
-            response.Revenue = movieDetail.Revenue;
-            response.Tagline = movieDetail.Tagline;
-            response.Overview = movieDetail.Overview;
-            response.PosterUrl = movieDetail.PosterUrl;
-            response.Title = movieDetail.Title;
-            response.TmdbUrl = movieDetail.TmdbUrl;
-            response.Budget = movieDetail.Budget;
-            response.BackdropUrl = movieDetail.BackdropUrl;
-            response.CreatedDate = movieDetail.CreatedDate;
-            response.Rating = (decimal?)await _movieRepository.GetAvgRatingByMovieId(id);
+            // for genre
+            var genres = new List<GenreModel>();
+            foreach (var genre in movieDetail.Genres)
+            {
+                genres.Add(new GenreModel
+                {
+                    Id = genre.Id,
+                    Name = genre.Name
+                });
+            }
 
-           // for cast detail
-           var casts = await _castService.GetCastDetailByMovieId(id);
-           // TODO:  put CastDetailModel in MovieDetail Model
-           response.CastModel = casts;
+            // for cast detail
+            var casts = new List<CastResponseModel>();
+            foreach (var item in movieDetail.MovieCasts)
+            {
+                casts.Add(new CastResponseModel
+                {
+                    Id = item.Casts.Id,
+                    Name = item.Casts.Name,
+                    Gender = item.Casts.Gender,
+                    ProfilePath = item.Casts.ProfilePath,
+                    Character = item.Character
+                });
+            }
 
-           return response;
+
+            // for movie facts +genres + cast detail
+            var response = new MovieDetailsResponseModel()
+            {
+                Id = movieDetail.Id,
+                Title = movieDetail.Title,
+                PosterUrl = movieDetail.PosterUrl,
+                BackdropUrl = movieDetail.BackdropUrl,
+                Rating = movieDetail.Rating,
+                Overview = movieDetail.Overview,
+                Tagline = movieDetail.Tagline,
+                Budget = movieDetail.Budget,
+                Revenue = movieDetail.Revenue,
+                ImdbUrl = movieDetail.ImdbUrl,
+                TmdbUrl = movieDetail.TmdbUrl,
+                ReleaseDate = movieDetail.ReleaseDate,
+                RunTime = movieDetail.RunTime,
+                Price = movieDetail.Price,
+                Genres = genres,
+                Casts = casts
+            };
+
+            return response;
         }
 
 
@@ -90,19 +117,14 @@ namespace Infrastructure.Services
                 result.Add(
                     new MovieCardResponseModel()
                     {
-                        Id = movie.MovieId,
-                        Title = movie.Movies.Title,
-                        PosterUrl = movie.Movies.PosterUrl
+                        Id = movie.Id,
+                        Title = movie.Title,
+                        PosterUrl = movie.PosterUrl
                     });
             }
             return result;
         }
 
 
-        //public Task CreateMovie(MovieCreateRequestModel model)
-        //{
-        // take model and convert it to Movie Entity and send it to repository
-        // if repository saves successfully return true/id:2
-        //}
     }
 }

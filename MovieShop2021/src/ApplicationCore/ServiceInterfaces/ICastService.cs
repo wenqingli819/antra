@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ApplicationCore.Models.Response;
+﻿using System.Threading.Tasks;
+using ApplicationCore.ServiceInterfaces;
 
-namespace ApplicationCore.ServiceInterfaces
+namespace Infrastructure.Services
 {
     public interface ICastService
     {
-        Task<MovieDetailsResponseModel.CastResponseModel> GetCastDetailByMovieId(int id);
+        Task<CastResponseModel> GetCastDetailByMovieId(int id);
     }
 }

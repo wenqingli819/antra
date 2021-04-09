@@ -5,13 +5,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Views\Movies\0gyhml21.ft1~" />
+    <None Remove="Views\Movies\13yzvkbc.3qz~" />
+    <None Remove="Views\Movies\3eylqnld.ict~" />
+    <None Remove="Views\Movies\c3klkefd.efz~" />
+    <None Remove="Views\Movies\cbey5xig.3pg~" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.4" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.4">
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
   </ItemGroup>
 
   <ItemGroup>

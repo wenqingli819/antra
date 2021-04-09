@@ -12,8 +12,6 @@ namespace ApplicationCore.Models.Response
         public string Title { get; set; }
         public string PosterUrl { get; set; }
         public string BackdropUrl { get; set; }
-
-        public decimal? Rating { get; set; }
         public string Overview { get; set; }
         public string Tagline { get; set; }
         public decimal? Budget { get; set; }
@@ -24,21 +22,12 @@ namespace ApplicationCore.Models.Response
         public DateTime? CreatedDate { get; set; }
         public int? RunTime { get; set; }
         public decimal? Price { get; set; }
+
+        public decimal? Rating { get; set; }
         public int FavoritesCount { get; set; }
-        public List<CastDetailsResponseModel> Casts { get; set; }
+
+        public List<CastResponseModel> Casts { get; set; }
         public List<GenreModel> Genres { get; set; }
 
-        public CastResponseModel CastModel { get; set; }
-
-        public class CastResponseModel
-        {
-            public int Id { get; set; }
-            public string Name { get; set; }
-            public string Gender { get; set; }
-            public string TmdbUrl { get; set; }
-            public string ProfilePath { get; set; }
-            public string Character { get; set; }
-            
-        }
     }
 }

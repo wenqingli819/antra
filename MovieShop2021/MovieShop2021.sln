@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{551783DA-AE9A-4E5D-93B1-76F46B178172}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C2B29FA2-03B5-4128-BB06-67032AF8BA2A}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\Infrastracture\Infrastructure.csproj", "{B4849A10-0AA4-4651-86DE-23C2EB66D1B7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationCore", "src\ApplicationCore\ApplicationCore.csproj", "{8D1AC975-4853-4EEF-A50C-FD65CF7109DF}"
@@ -14,6 +12,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieShopAPI", "src\MovieShopAPI\MovieShopAPI.csproj", "{566CC18B-B875-4629-9EBA-B8E10A320423}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieShopMVC", "src\MovieShopMVC\MovieShopMVC.csproj", "{A60F6B2E-A93B-41E2-AA94-C0B95772AD7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F23942C0-B6AB-4F28-AC19-CE6BF60B2A0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieShop2021.UnitTests", "tests\MovieShop2021.UnitTests\MovieShop2021.UnitTests.csproj", "{623919F6-49BF-4241-8341-20B80286A03F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +75,18 @@ Global
 		{A60F6B2E-A93B-41E2-AA94-C0B95772AD7A}.Release|x64.Build.0 = Release|Any CPU
 		{A60F6B2E-A93B-41E2-AA94-C0B95772AD7A}.Release|x86.ActiveCfg = Release|Any CPU
 		{A60F6B2E-A93B-41E2-AA94-C0B95772AD7A}.Release|x86.Build.0 = Release|Any CPU
+		{623919F6-49BF-4241-8341-20B80286A03F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{623919F6-49BF-4241-8341-20B80286A03F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{623919F6-49BF-4241-8341-20B80286A03F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{623919F6-49BF-4241-8341-20B80286A03F}.Debug|x64.Build.0 = Debug|Any CPU
+		{623919F6-49BF-4241-8341-20B80286A03F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{623919F6-49BF-4241-8341-20B80286A03F}.Debug|x86.Build.0 = Debug|Any CPU
+		{623919F6-49BF-4241-8341-20B80286A03F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{623919F6-49BF-4241-8341-20B80286A03F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{623919F6-49BF-4241-8341-20B80286A03F}.Release|x64.ActiveCfg = Release|Any CPU
+		{623919F6-49BF-4241-8341-20B80286A03F}.Release|x64.Build.0 = Release|Any CPU
+		{623919F6-49BF-4241-8341-20B80286A03F}.Release|x86.ActiveCfg = Release|Any CPU
+		{623919F6-49BF-4241-8341-20B80286A03F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +96,7 @@ Global
 		{8D1AC975-4853-4EEF-A50C-FD65CF7109DF} = {551783DA-AE9A-4E5D-93B1-76F46B178172}
 		{566CC18B-B875-4629-9EBA-B8E10A320423} = {551783DA-AE9A-4E5D-93B1-76F46B178172}
 		{A60F6B2E-A93B-41E2-AA94-C0B95772AD7A} = {551783DA-AE9A-4E5D-93B1-76F46B178172}
+		{623919F6-49BF-4241-8341-20B80286A03F} = {F23942C0-B6AB-4F28-AC19-CE6BF60B2A0E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {93E81E84-3F6B-4C41-907F-0A064BCF854F}

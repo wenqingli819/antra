@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -9,8 +10,8 @@ using ApplicationCore.RepositoryInterfaces;
 using ApplicationCore.ServiceInterfaces;
 using Infrastructure.Repositories;
 using Infrastructure.Data;
-using Infrastructure.Helpers;
 using Infrastructure.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -28,6 +29,9 @@ namespace MovieShopMVC
         //This method gets called by the runtime.Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddRazorPages().AddRazorRuntimeCompilation();
+
             services.AddDbContext<MovieShopDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("MovieShopDbConnection")));
 
@@ -38,7 +42,25 @@ namespace MovieShopMVC
             services.AddScoped<IGenreService, GenreService>();
             services.AddScoped<ICastRepository, CastRepository>();
             services.AddScoped<ICastService, CastService>();
-            services.AddAutoMapper(typeof(Startup), typeof(MovieShopMappingProfile)); //https://docs.automapper.org/en/latest/Understanding-your-mapping.html
+            //services.AddAutoMapper(typeof(Startup), typeof(MovieShopMappingProfile)); //https://docs.automapper.org/en/latest/Understanding-your-mapping.html
+
+            services.AddScoped<IUserService, UserService >();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ICurrentUserService, CurrentUserService>();
+
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.Cookie.Name = "MovieShopAuthCookie";
+                    options.ExpireTimeSpan = TimeSpan.FromHours(2);
+                    options.LoginPath = "/Account/login"; // if user not login but enter a page that needs to login, redirect user to here
+                                                            // if no cookie or cookie if invalid, go here
+                });
+            
+            services.AddHttpContextAccessor();
+
+
 
         }
 
@@ -60,6 +82,7 @@ namespace MovieShopMVC
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

@@ -1,7 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\ApplicationCore",
+    "\\src\\ApplicationCore\\Models",
+    "\\src\\ApplicationCore\\Models\\Request",
+    "\\src\\ApplicationCore\\ServiceInterfaces",
+    "\\src\\MovieShopMVC",
+    "\\src\\MovieShopMVC\\Views",
+    "\\src\\MovieShopMVC\\Views\\Account",
+    "\\src\\MovieShopMVC\\Views\\Shared"
   ],
+  "SelectedNode": "\\src\\Infrastracture\\Services\\CurrentUserService.cs",
   "PreviewInSolutionExplorer": false
 }
