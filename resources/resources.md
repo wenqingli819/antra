@@ -23,6 +23,7 @@ https://www.sqlservertutorial.net/
 - #### C# and .Net Core
 
   - https://docs.microsoft.com/en-us/samples/browse/?redirectedfrom=MSDN-samples
+  - https://docs.microsoft.com/en-us/dotnet/
   - https://www.c-sharpcorner.com/article/dapper-and-repository-pattern-in-web-api/
 
 ### Cloud

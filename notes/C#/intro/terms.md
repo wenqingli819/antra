@@ -222,6 +222,16 @@ not compiler type, type is signed to the variable at **runtime**
 
 
 
+### `sealed`
+
+"I am not available for any kind of inheritance further. Do not inherit me now."
+
+![img](https://learning.oreilly.com/library/view/learn-c-in/9781787287044/assets/d26bb8ce-ae3b-4a01-99b4-ee656a06ae0c.png)
+
+| abstract class                                               | sealed class                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| abstract method and virtual method can be overridden in derived classes | abstract method and virtual method CANNOT  be overridden in derived classes |
+
 
 
 ## Types

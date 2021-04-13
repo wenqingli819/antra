@@ -1,0 +1,1 @@
+https://jasonwatmore.com/post/2020/10/02/aspnet-core-31-global-error-handler-tutorial

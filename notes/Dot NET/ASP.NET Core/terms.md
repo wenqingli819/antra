@@ -99,6 +99,12 @@ SOLID’s [dependency inversion principle](https://stackify.com/dependency-inver
 
 .NET Framework did not had.. we used to use 3rd party libs like **NinJect**, **Autofact**
 
+##### DI Benefits
+
+1. maintainability - splitting logic into multiple smaller classes
+2. testability
+3. abstraction
+
 ##### DI 3 ways
 
 1. **constructor injection**  
@@ -109,7 +115,7 @@ SOLID’s [dependency inversion principle](https://stackify.com/dependency-inver
 
 3. property injection
 
-https://www.c-sharpcorner.com/blogs/dependency-injectionc-sharp
+https://www.blog.jamesmichaelhickey.com/NET-Core-Dependency-Injection/
 
 ##### Scope
 
