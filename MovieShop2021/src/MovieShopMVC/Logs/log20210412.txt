@@ -1,0 +1,13 @@
+2021-04-12 12:07:23.963 -04:00 [INF] Application Starting Up
+2021-04-12 12:07:27.156 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-04-12 12:07:27.159 -04:00 [INF] Hosting environment: Development
+2021-04-12 12:07:27.171 -04:00 [INF] Content root path: C:\Users\wenqi\OneDrive\Documents\code-workspace\typora\antra\MovieShop2021\src\MovieShopMVC
+2021-04-12 12:08:10.256 -04:00 [INF] Processing current user's header information null
+2021-04-12 12:08:10.259 -04:00 [INF] Processing current user's header information "2021-04-12T16:08:10.2541419Z"
+2021-04-12 12:08:10.260 -04:00 [INF] Processing current user's header information false
+2021-04-12 12:08:10.260 -04:00 [INF] Processing current user's header information  
+2021-04-12 12:08:10.958 -04:00 [WRN] No type was specified for the decimal property 'Budget' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-04-12 12:08:10.959 -04:00 [WRN] No type was specified for the decimal property 'Revenue' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-04-12 12:08:10.959 -04:00 [WRN] No type was specified for the decimal property 'TotalPrice' on entity type 'Purchase'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-04-12 12:08:12.070 -04:00 [INF] Using cache for GenreService
+2021-04-12 12:08:12.096 -04:00 [INF] Elapsed="00:00:00.0258513"

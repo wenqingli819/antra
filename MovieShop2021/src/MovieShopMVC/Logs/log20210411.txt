@@ -1,0 +1,104 @@
+2021-04-11 16:23:40.803 -04:00 [INF] Application Starting Up
+2021-04-11 16:23:43.771 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-04-11 16:23:43.782 -04:00 [INF] Hosting environment: Development
+2021-04-11 16:23:43.782 -04:00 [INF] Content root path: C:\Users\wenqi\OneDrive\Documents\code-workspace\typora\antra\MovieShop2021\src\MovieShopMVC
+2021-04-11 16:23:44.144 -04:00 [INF] Processing current user's header information wenqingli819@gmail.com
+2021-04-11 16:23:44.145 -04:00 [INF] Processing current user's header information "2021-04-11T20:23:44.1418705Z"
+2021-04-11 16:23:44.147 -04:00 [INF] Processing current user's header information true
+2021-04-11 16:23:44.147 -04:00 [INF] Processing current user's header information wenqing li
+2021-04-11 16:23:44.896 -04:00 [WRN] No type was specified for the decimal property 'Budget' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-04-11 16:23:44.896 -04:00 [WRN] No type was specified for the decimal property 'Revenue' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-04-11 16:23:44.896 -04:00 [WRN] No type was specified for the decimal property 'TotalPrice' on entity type 'Purchase'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-04-11 16:23:46.047 -04:00 [INF] Using cache for GenreService
+2021-04-11 16:23:46.081 -04:00 [INF] Elapsed="00:00:00.0329702"
+2021-04-11 16:24:13.880 -04:00 [INF] Processing current user's header information wenqingli819@gmail.com
+2021-04-11 16:24:13.880 -04:00 [INF] Processing current user's header information "2021-04-11T20:24:13.8801024Z"
+2021-04-11 16:24:13.880 -04:00 [INF] Processing current user's header information true
+2021-04-11 16:24:13.880 -04:00 [INF] Processing current user's header information wenqing li
+2021-04-11 16:24:13.948 -04:00 [INF] Processing current user's header information null
+2021-04-11 16:24:13.948 -04:00 [INF] Processing current user's header information "2021-04-11T20:24:13.9487675Z"
+2021-04-11 16:24:13.948 -04:00 [INF] Processing current user's header information false
+2021-04-11 16:24:13.948 -04:00 [INF] Processing current user's header information  
+2021-04-11 16:24:14.074 -04:00 [INF] Using cache for GenreService
+2021-04-11 16:24:14.074 -04:00 [INF] Elapsed="00:00:00.0000139"
+2021-04-11 16:24:15.796 -04:00 [INF] Processing current user's header information null
+2021-04-11 16:24:15.796 -04:00 [INF] Processing current user's header information "2021-04-11T20:24:15.7960248Z"
+2021-04-11 16:24:15.796 -04:00 [INF] Processing current user's header information false
+2021-04-11 16:24:15.796 -04:00 [INF] Processing current user's header information  
+2021-04-11 16:24:15.963 -04:00 [INF] Processing current user's header information wenqingli819@gmail.com
+2021-04-11 16:24:15.963 -04:00 [INF] Processing current user's header information "2021-04-11T20:24:15.9635143Z"
+2021-04-11 16:24:15.963 -04:00 [INF] Processing current user's header information true
+2021-04-11 16:24:15.963 -04:00 [INF] Processing current user's header information wenqing li
+2021-04-11 16:24:16.040 -04:00 [INF] Using cache for GenreService
+2021-04-11 16:24:16.040 -04:00 [INF] Elapsed="00:00:00.0000121"
+2021-04-11 16:24:17.403 -04:00 [INF] Processing current user's header information wenqingli819@gmail.com
+2021-04-11 16:24:17.403 -04:00 [INF] Processing current user's header information "2021-04-11T20:24:17.4036757Z"
+2021-04-11 16:24:17.403 -04:00 [INF] Processing current user's header information true
+2021-04-11 16:24:17.403 -04:00 [INF] Processing current user's header information wenqing li
+2021-04-11 16:24:17.532 -04:00 [WRN] Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-04-11 16:24:17.711 -04:00 [INF] Using cache for GenreService
+2021-04-11 16:24:17.711 -04:00 [INF] Elapsed="00:00:00.0000034"
+2021-04-11 16:59:54.567 -04:00 [INF] Application Starting Up
+2021-04-11 16:59:57.534 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-04-11 16:59:57.550 -04:00 [INF] Hosting environment: Development
+2021-04-11 16:59:57.551 -04:00 [INF] Content root path: C:\Users\wenqi\OneDrive\Documents\code-workspace\typora\antra\MovieShop2021\src\MovieShopMVC
+2021-04-11 16:59:57.887 -04:00 [INF] Processing current user's header information wenqingli819@gmail.com
+2021-04-11 16:59:57.889 -04:00 [INF] Processing current user's header information "2021-04-11T20:59:57.8856852Z"
+2021-04-11 16:59:57.891 -04:00 [INF] Processing current user's header information true
+2021-04-11 16:59:57.892 -04:00 [INF] Processing current user's header information wenqing li
+2021-04-11 16:59:58.624 -04:00 [WRN] No type was specified for the decimal property 'Budget' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-04-11 16:59:58.626 -04:00 [WRN] No type was specified for the decimal property 'Revenue' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-04-11 16:59:58.626 -04:00 [WRN] No type was specified for the decimal property 'TotalPrice' on entity type 'Purchase'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-04-11 16:59:59.726 -04:00 [INF] Using cache for GenreService
+2021-04-11 16:59:59.758 -04:00 [INF] Elapsed="00:00:00.0320087"
+2021-04-11 17:00:08.821 -04:00 [INF] Processing current user's header information wenqingli819@gmail.com
+2021-04-11 17:00:08.821 -04:00 [INF] Processing current user's header information "2021-04-11T21:00:08.8212033Z"
+2021-04-11 17:00:08.821 -04:00 [INF] Processing current user's header information true
+2021-04-11 17:00:08.821 -04:00 [INF] Processing current user's header information wenqing li
+2021-04-11 17:00:08.868 -04:00 [INF] Processing current user's header information null
+2021-04-11 17:00:08.868 -04:00 [INF] Processing current user's header information "2021-04-11T21:00:08.8686987Z"
+2021-04-11 17:00:08.868 -04:00 [INF] Processing current user's header information false
+2021-04-11 17:00:08.869 -04:00 [INF] Processing current user's header information  
+2021-04-11 17:00:08.925 -04:00 [INF] Using cache for GenreService
+2021-04-11 17:00:08.925 -04:00 [INF] Elapsed="00:00:00.0000164"
+2021-04-11 17:00:12.269 -04:00 [INF] Processing current user's header information null
+2021-04-11 17:00:12.270 -04:00 [INF] Processing current user's header information "2021-04-11T21:00:12.2698913Z"
+2021-04-11 17:00:12.270 -04:00 [INF] Processing current user's header information false
+2021-04-11 17:00:12.270 -04:00 [INF] Processing current user's header information  
+2021-04-11 17:00:12.324 -04:00 [INF] Using cache for GenreService
+2021-04-11 17:00:12.324 -04:00 [INF] Elapsed="00:00:00.0000173"
+2021-04-11 17:00:17.303 -04:00 [INF] Processing current user's header information null
+2021-04-11 17:00:17.303 -04:00 [INF] Processing current user's header information "2021-04-11T21:00:17.3037789Z"
+2021-04-11 17:00:17.304 -04:00 [INF] Processing current user's header information false
+2021-04-11 17:00:17.304 -04:00 [INF] Processing current user's header information  
+2021-04-11 17:26:23.750 -04:00 [INF] Application Starting Up
+2021-04-11 17:26:26.474 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-04-11 17:26:26.485 -04:00 [INF] Hosting environment: Development
+2021-04-11 17:26:26.517 -04:00 [INF] Content root path: C:\Users\wenqi\OneDrive\Documents\code-workspace\typora\antra\MovieShop2021\src\MovieShopMVC
+2021-04-11 17:26:26.794 -04:00 [INF] Processing current user's header information null
+2021-04-11 17:26:26.798 -04:00 [INF] Processing current user's header information "2021-04-11T21:26:26.7929052Z"
+2021-04-11 17:26:26.799 -04:00 [INF] Processing current user's header information false
+2021-04-11 17:26:26.800 -04:00 [INF] Processing current user's header information  
+2021-04-11 17:26:27.484 -04:00 [WRN] No type was specified for the decimal property 'Budget' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-04-11 17:26:27.485 -04:00 [WRN] No type was specified for the decimal property 'Revenue' on entity type 'Movie'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-04-11 17:26:27.486 -04:00 [WRN] No type was specified for the decimal property 'TotalPrice' on entity type 'Purchase'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-04-11 17:26:28.781 -04:00 [INF] Using cache for GenreService
+2021-04-11 17:26:28.820 -04:00 [INF] Elapsed="00:00:00.0374916"
+2021-04-11 17:27:38.195 -04:00 [INF] Processing current user's header information null
+2021-04-11 17:27:38.195 -04:00 [INF] Processing current user's header information "2021-04-11T21:27:38.1955421Z"
+2021-04-11 17:27:38.196 -04:00 [INF] Processing current user's header information false
+2021-04-11 17:27:38.196 -04:00 [INF] Processing current user's header information  
+2021-04-11 17:27:38.298 -04:00 [INF] Using cache for GenreService
+2021-04-11 17:27:38.298 -04:00 [INF] Elapsed="00:00:00.0000836"
+2021-04-11 17:27:48.496 -04:00 [INF] Processing current user's header information null
+2021-04-11 17:27:48.497 -04:00 [INF] Processing current user's header information "2021-04-11T21:27:48.4967183Z"
+2021-04-11 17:27:48.497 -04:00 [INF] Processing current user's header information false
+2021-04-11 17:27:48.497 -04:00 [INF] Processing current user's header information  
+2021-04-11 17:28:13.827 -04:00 [ERR] Middleware is catching exception
+2021-04-11 17:28:15.003 -04:00 [ERR] Starting Logging for exception
+2021-04-11 17:28:20.146 -04:00 [INF] Processing current user's header information null
+2021-04-11 17:28:20.147 -04:00 [INF] Processing current user's header information "2021-04-11T21:28:20.1275354Z"
+2021-04-11 17:28:20.148 -04:00 [INF] Processing current user's header information false
+2021-04-11 17:28:20.148 -04:00 [INF] Processing current user's header information  
+2021-04-11 17:28:20.337 -04:00 [INF] Using cache for GenreService
+2021-04-11 17:28:20.337 -04:00 [INF] Elapsed="00:00:00.0000091"

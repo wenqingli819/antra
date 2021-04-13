@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using ApplicationCore.Entities;
+using ApplicationCore.Exceptions;
 using ApplicationCore.Models.Request;
 using ApplicationCore.Models.Response;
 using ApplicationCore.RepositoryInterfaces;
@@ -28,7 +29,7 @@ namespace Infrastructure.Services
             // 2.1 if exists 
             if (dbUser != null)
             {
-                throw new Exception("user already exists, please login");
+                throw new ConflictException("user already exists, please login");
             }
             // 2.2 new user, continue with hashing
             // create a salt, add salt to the user entered password
@@ -107,6 +108,37 @@ namespace Infrastructure.Services
 
 
             return null;
+        }
+
+        public async Task<UserRegisterResponseModel> GetUserDetailsById(int id)
+        {
+            var user = await _userRepository.GetUserById(id);
+            if (user == null) throw new NotFoundException("User", id);
+
+            var result = new UserRegisterResponseModel
+            {
+                Id = user.Id,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName
+            };
+            return result;
+
+        }
+
+        public async Task<UserRegisterResponseModel> GetUserDetailsByEmail(string email)
+        {
+            var user = await _userRepository.GetUserByEmail(email);
+            if (user == null) throw new NotFoundException("User", email);
+
+            var result = new UserRegisterResponseModel
+            {
+                Id = user.Id,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName
+            };
+            return result;
         }
     }
 }

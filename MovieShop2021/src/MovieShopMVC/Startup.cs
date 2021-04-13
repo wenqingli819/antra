@@ -10,9 +10,12 @@ using ApplicationCore.RepositoryInterfaces;
 using ApplicationCore.ServiceInterfaces;
 using Infrastructure.Repositories;
 using Infrastructure.Data;
+using Infrastructure.Filters;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using MovieShopMVC.Middlewares;
+using Serilog;
 
 
 namespace MovieShopMVC
@@ -35,7 +38,10 @@ namespace MovieShopMVC
             services.AddDbContext<MovieShopDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("MovieShopDbConnection")));
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews(
+                options => options.Filters.Add(typeof(MovieShopHeaderFilter)));
+
+
             services.AddScoped<IMovieService, MovieService>(); //AddTransient
             services.AddScoped<IMovieRepository, MovieRepository>();
             services.AddScoped<IAsyncRepository<Genre>, EfRepository<Genre>>();
@@ -59,6 +65,7 @@ namespace MovieShopMVC
                 });
             
             services.AddHttpContextAccessor();
+            services.AddMemoryCache();
 
 
 
@@ -69,7 +76,8 @@ namespace MovieShopMVC
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                //app.UseDeveloperExceptionPage();
+                app.UseMovieShopExceptionMiddleware();
             }
             else
             {
@@ -79,6 +87,8 @@ namespace MovieShopMVC
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            //app.UseSerilogRequestLogging();
 
             app.UseRouting();
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Threading.Tasks;
 using ApplicationCore.ServiceInterfaces;
+using Infrastructure.Filters;
 
 
 namespace MovieShopMVC.Controllers

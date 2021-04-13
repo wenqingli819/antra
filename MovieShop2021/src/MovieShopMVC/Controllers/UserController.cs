@@ -16,7 +16,7 @@ namespace MovieShopMVC.Controllers
             return View();
         }
 
-        [Authorize]
+        [Authorize]     
         [HttpPost]
         public async Task<IActionResult> PurchaseMovie()
         {

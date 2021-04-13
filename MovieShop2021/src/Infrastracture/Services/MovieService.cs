@@ -45,7 +45,7 @@ namespace Infrastructure.Services
         }
 
 
-        public async Task<double> GetAvgRatingByMovie(int id)
+        public async Task<double> GetAvgRatingByMovieId(int id)
         {
             var avgRating = await _movieRepository.GetAvgRatingByMovieId(id);
             return avgRating;
