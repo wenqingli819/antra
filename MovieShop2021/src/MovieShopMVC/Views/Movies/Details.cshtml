@@ -144,19 +144,20 @@
 
                 <tbody>
 
-
-                    @foreach (var cast in Model?.Casts)
-                    {
-                        <tr>
-                            <td>
-                                <img src="@cast.ProfilePath"
-                                     class="cast-small-img rounded-circle"
-                                     alt="@cast.Name" />
-                            </td>
-                            <td> @cast.Name </td>
-                            <td> @cast.Character</td>
-                        </tr>
-                    }
+                @foreach (var cast in Model?.Casts)
+                {
+                    <tr>
+                        <td>
+                            <a asp-controller="Casts" asp-action="Index" asp-route-id="@cast.Id">
+                            <img src="@cast.ProfilePath"
+                                 class="cast-small-img rounded-circle"
+                                 alt="@cast.Name" />
+                            </a>
+                        </td>
+                        <td> @cast.Name </td>
+                        <td> @cast.Character</td>
+                    </tr>
+                }
 
 
                 </tbody>

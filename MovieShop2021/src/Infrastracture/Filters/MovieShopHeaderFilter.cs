@@ -15,7 +15,7 @@ namespace Infrastructure.Filters
     public class MovieShopHeaderFilter : IActionFilter
     {
         private readonly ICurrentUserService _currentUserService;
-        private readonly ILogger<MovieShopHeaderFilter> _logger;
+        //private readonly ILogger<MovieShopHeaderFilter> _logger;
 
         public MovieShopHeaderFilter(ICurrentUserService currentUserService)
         {

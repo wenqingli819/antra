@@ -17,6 +17,6 @@ namespace ApplicationCore.RepositoryInterfaces
 
         Task<Movie> GetMovieDetailById(int id);
 
-
+        Task<IEnumerable<Movie>> GetMoviesByCast(int castId);
     }
 }

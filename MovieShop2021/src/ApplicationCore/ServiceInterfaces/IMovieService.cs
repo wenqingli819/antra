@@ -8,16 +8,16 @@ namespace ApplicationCore.ServiceInterfaces
 {
     public interface IMovieService
     {
-        Task<List<MovieCardResponseModel>> Get30HighestGrossing();
+        Task<IEnumerable<MovieCardResponseModel>> Get30HighestGrossing();
         Task CreateMovie(MovieCreateRequestModel model);
 
-        Task<List<MovieCardResponseModel>> GetMoviesByGenre(int id);
+        Task<IEnumerable<MovieCardResponseModel>> GetMoviesByGenre(int id);
 
-
-
-       Task<double> GetAvgRatingByMovieId(int id);
+        Task<double> GetAvgRatingByMovieId(int id);
 
         Task<MovieDetailsResponseModel> GetMovieDetailByMovie(int id);
+
+        Task<IEnumerable<MovieCardResponseModel>> GetMoviesByCast(int castId);
 
 
     }

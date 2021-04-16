@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Models.Response
 {
-    public class MovieCardResponseModel 
+    public class MovieCardResponseModel
     {
         public int Id { get; set; }
         public string Title { get; set; }

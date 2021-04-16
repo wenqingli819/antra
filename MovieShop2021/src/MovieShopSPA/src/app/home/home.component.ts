@@ -11,10 +11,10 @@ import { MovieCard } from '../shared/models/movie-card';
 export class HomeComponent implements OnInit {
 
   movies:MovieCard[] = [];
-  constructor(private movieServiceL:MovieService) { }
+  constructor(private movieService:MovieService) { }
 
   ngOnInit(): void {
-    this.movieServiceL.getTop30GrossingMovies().subscribe(
+    this.movieService.getTop30GrossingMovies().subscribe(
       m=>{
         this.movies= m;
         console.table(this.movies);

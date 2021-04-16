@@ -1,8 +1,12 @@
 The generate command and the different sub-commands also have shortcut notations, so the following commands are similar:
 
+
+
+`npm i`
+
 `ng serve`
 
-
+`ng serve --port 4201`
 
 ​	• `ng g c my-new-component`: add a component to your application
 ​	• `ng g c books/bookform` --flat : flat add component in existing folder without creating specific folder.

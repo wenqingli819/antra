@@ -29,7 +29,7 @@ namespace Infrastructure.Services
             throw new NotImplementedException();
         }
 
-        public async Task<List<MovieCardResponseModel>> Get30HighestGrossing()
+        public async Task<IEnumerable<MovieCardResponseModel>> Get30HighestGrossing()
         {
             var movies = await _movieRepository.GetTop30HighestGrossingMovies();
             var result = new List<MovieCardResponseModel>();
@@ -108,7 +108,7 @@ namespace Infrastructure.Services
         }
 
 
-        public async Task<List<MovieCardResponseModel>> GetMoviesByGenre(int id)
+        public async Task<IEnumerable<MovieCardResponseModel>> GetMoviesByGenre(int id)
         {
             var movies = await _movieRepository.GetMoviesByGenreId(id);
             var result = new List<MovieCardResponseModel>();
@@ -125,6 +125,21 @@ namespace Infrastructure.Services
             return result;
         }
 
+        public async Task<IEnumerable<MovieCardResponseModel>> GetMoviesByCast(int castId)
+        {
+            var dbMovies = await _movieRepository.GetMoviesByCast(castId);
+            var movies = new List<MovieCardResponseModel>();
+            foreach (var item in dbMovies)
+            {
+                movies.Add(new MovieCardResponseModel
+                {
+                    Id = item.Id,
+                    Title = item.Title,
+                    PosterUrl = item.PosterUrl
 
+                });
+            }
+            return movies;
+        }
     }
 }

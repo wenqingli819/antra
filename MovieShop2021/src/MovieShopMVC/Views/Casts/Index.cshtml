@@ -1,0 +1,21 @@
+﻿@using ApplicationCore.ServiceInterfaces
+@model  IEnumerable<ApplicationCore.Models.Response.MovieCardResponseModel>
+@{
+    var cast=ViewBag.Cast;
+}
+
+@*<div class="">
+    <div>
+        <h1>@cast.Name</h1>
+        <img src="@cast.ProfilePath" class="cast-small-img rounded-circle" />
+    </div>
+</div>*@
+<div>
+    <h2>Movies</h2>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            @await Html.PartialAsync("_MovieCard", item)
+        }
+    </div>
+</div>

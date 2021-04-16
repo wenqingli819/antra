@@ -31,9 +31,9 @@ namespace Infrastructure.Repositories
 
         public async Task<IEnumerable<Movie>> GetMoviesByGenreId(int genreId)
         {
-            var count = await  _dbContext.Genres
+            var count = await _dbContext.Genres
                 .Where(g => g.Id == genreId)
-                .Include(g=>g.Movies)
+                .Include(g => g.Movies)
                 .SelectMany(g => g.Movies)
                 .CountAsync();
 
@@ -50,14 +50,14 @@ namespace Infrastructure.Repositories
 
             return movies;
         }
-        
+
         public async Task<double> GetAvgRatingByMovieId(int movieId)
         {
             var avgRating = await _dbContext.Reviews
-                                    .Where(r => r.MovieId == movieId)
-                                    .DefaultIfEmpty()
-                                    .AverageAsync(r => r == null ? 0 : r.Rating);
-            return (double)avgRating;
+                .Where(r => r.MovieId == movieId)
+                .DefaultIfEmpty()
+                .AverageAsync(r => r == null ? 0 : r.Rating);
+            return (double) avgRating;
 
         }
 
@@ -65,8 +65,8 @@ namespace Infrastructure.Repositories
         public async Task<Movie> GetMovieDetailById(int id)
         {
             var movie = await _dbContext.Movies
-                .Where(m=>m.Id == id)
-                .Include(mg=>mg.Genres)
+                .Where(m => m.Id == id)
+                .Include(mg => mg.Genres)
                 .Include(m => m.MovieCasts)
                 .ThenInclude(mc => mc.Casts)
                 .FirstOrDefaultAsync();
@@ -84,5 +84,18 @@ namespace Infrastructure.Repositories
 
             return movie;
         }
+
+
+        public async Task<IEnumerable<Movie>> GetMoviesByCast(int castId)
+        {
+            return await _dbContext.Casts
+                .Where(c => c.Id == castId)
+                .SelectMany(c => c.MovieCasts)
+                .Select(mc => mc.Movies)
+                .OrderByDescending(m => m.Revenue)
+                .ToListAsync();
+        }
+
     }
 }
+

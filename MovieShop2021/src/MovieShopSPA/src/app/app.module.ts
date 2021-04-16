@@ -13,6 +13,10 @@ import {HttpClientModule} from '@angular/common/http';
 import { MovieCardComponent } from './shared/components/movie-card/movie-card.component';
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
 import { MovieCardListComponent } from './movies/movie-card-list/movie-card-list.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+
+import{FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,12 +28,16 @@ import { MovieCardListComponent } from './movies/movie-card-list/movie-card-list
     MovieCardComponent,
     MovieDetailsComponent,
     MovieCardListComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
