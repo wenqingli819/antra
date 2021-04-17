@@ -11,9 +11,10 @@ const routes: Routes =
   [
     { path: '', component: HomeComponent },
     { path: 'genre/movies/:id', component: MovieCardListComponent },
+    { path: 'movies/genres/:id', component: MovieCardListComponent },
     { path: 'movies/:id', component: MovieDetailsComponent },
     { path: 'login', component:LoginComponent},
-    { path: 'cast/movies/:id',component: CastItemComponent}
+    { path: 'movies/:id/cast/movies/:id',component: CastItemComponent}
   ];
 
 @NgModule({

@@ -85,6 +85,17 @@ use [routerLink] property binding syntax, bind a expression
 
 
 
+### Accessing URL parameters: Snapshot vs Subscription
+
+1. import `ActivatedRoute`and DI it in our component, in order to get the params we want.
+
+2. two ways of accessing the params
+
+   | route.snapshot.paramMap                                      | route.paramMap.subscribe                                     |
+   | ------------------------------------------------------------ | ------------------------------------------------------------ |
+   | **not to update** your URL parameter within the same component you are accessing it, | **update** the URL parameter within the same component, then you have to use a subscription. |
+   | the parameter **would only be accessed once, when the component loads**. Hence, it won’t be updated, even if you change its value from within the same component. |                                                              |
+
 
 
 ## Routing Information
