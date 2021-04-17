@@ -9,30 +9,32 @@ import { Movie } from 'src/app/shared/models/movie';
   templateUrl: './movie-details.component.html',
   styleUrls: ['./movie-details.component.css']
 })
+
 export class MovieDetailsComponent implements OnInit {
-  movie: Movie | undefined;
-  id: number | undefined;
+  movie: Movie;
+  id =-1;
 
-  constructor(private movieService: MovieService, private route: ActivatedRoute) { }
+  constructor(private movieService: MovieService, private route: ActivatedRoute,private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
 
-  //   this.route.paramMap.subscribe(
-  //     params => {
-  //       this.id = +params.get('id');
-  //       this.getMovieDetails();
-  //     }
-  //   );
+    this.route.paramMap.subscribe(
+      params => {
+        this.id = Number(params.get('id'));
+        this.getMovieDetails();
+      }
+    );
   }
 
-  // private getMovieDetails() {
-  //   this.movieService.getMovieDetails(this.id)
-  //     .subscribe(m => {
-  //       this.movie = m;
-  //       }
+  private getMovieDetails() {
+    console.log(this.id);
+    this.movieService.getMovieDetails(this.id)
+      .subscribe(m => {
+        this.movie = m;
+        }
 
-  //     );
-  //  }
+      );
+   }
 }
 
 

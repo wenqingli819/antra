@@ -58,5 +58,6 @@ gmail is one of the leaders of SPA approach.
    instead of using all the pages,
    we modularized the application
 
-2. 
+   
+
 

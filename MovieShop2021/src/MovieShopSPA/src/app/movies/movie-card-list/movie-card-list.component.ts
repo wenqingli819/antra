@@ -22,7 +22,7 @@ export class MovieCardListComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
         this.genreId = Number( params.get('id'));
-        console.log(this.genreId);
+
         this.movieService.getMoviesByGenre(this.genreId)
           .subscribe(g => {
             this.movies = g;

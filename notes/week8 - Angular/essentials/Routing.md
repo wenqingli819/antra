@@ -53,13 +53,18 @@ The router logs activity in the browser's history, so the back and forward butto
   ```typescript
 <a [routerLink]="['/Product', product.productID]">{{product.name}} </a>
   
-//dynamically takes the value of id from the product object.
   ```
 
-  <img src="../../../../../../../Desktop/ShareToMac/code-workspace/typora/antra/resources/image-20210415004803856.png" alt="image-20210415004803856" style="zoom:33%;" />
-  
-  use `routerLInk` so every time we don't see JavaScript bundles, only the updated values  ==> SPA
-  
+//dynamically takes the value of id from the product object.
+
+ <img src="../../../../../../../Desktop/ShareToMac/code-workspace/typora/antra/resources/image-20210415004803856.png" alt="image-20210415004803856" style="zoom:33%;" />
+
+
+
+ 
+
+ 
+
   ![image-20210415004839520](../../../../../../../Desktop/ShareToMac/code-workspace/typora/antra/resources/image-20210415004839520.png)
 
 
@@ -112,6 +117,10 @@ Ex :
 <a class="nav-link" routerLink="/login">Login</a>
 </li>
 ```
+
+
+
+
 
 ##### Get the Route Parameters
 

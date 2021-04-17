@@ -1,14 +1,100 @@
 # Data Binding
 
+### What is Data Binding?
+
+data binding = communication between typescript code (business logic) and what user sees (template html)
+
+
+
+### ------>  output data
+
+##### String Interpolation 
+
+`use when we want to print some text to the website `
+
+{{property name}}
+
+{{property.name}}
+
+{{'can hard code in here'}}
+
+##### property binding
+
+`use if want to change some property, an HTML element or directive or a coomponent`
+
+[property] = "data"
+
+
+
+many times we can either use string interpolation or property binding.
+
+
+
+### <------ react to (user) events
+
+##### event binding 
+
+(event) - "expression"
+
 ```typescript
-li>{{hero.name}}</li>
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
-<li (click)="selectHero(hero)"></li>
+// server.component.ts
+onCreateServer(){
+    // do something
+}
+
+
+// server.component.html
+<button xxxx (click)="onCreateServer()"> Add Server </button> 
+//when click event occurs, use this funciton
 ```
 
-- The `{{hero.name}}` [*interpolation*](https://angular.io/guide/interpolation) displays the component's `hero.name` property value within the `<li>` element.
-- The `[hero]` [*property binding*](https://angular.io/guide/property-binding) passes the value of `selectedHero` from the parent `HeroListComponent` to the `hero` property of the child `HeroDetailComponent`.
-- The `(click)` [*event binding*](https://angular.io/guide/user-input#binding-to-user-input-events) calls the component's `selectHero` method when the user clicks a hero's name.
+
+
+listen to the user input event
+
+```html
+<label> Server Name </label>
+<input type = "text"
+       class = "form-control"
+       (input) = "onUpdateServerName($event)">
+<p>{{serverName}}</p> 
+
+
+<!--> COMPONENT.ts <-->
+..
+servernName='';
+...
+onUpdateServerName(events:Event){
+    console.log(event);
+	this.serverName = (<HTMLInputElement>event.target).value;
+    }
+```
+
+![image-20210416183805224](../../../../../../../Desktop/ShareToMac/code-workspace/typora/antra/resources/image-20210416183805224.png)
+
+##### `$event` 
+
+to get access to the event data
+
+so input and click our default events provided by the DOM, they ship us some data when they are fired.
+
+the click event gives us an object holds the coordinates we clicked.
+
+we can capture this data use `$event` and pass that to the method we are calling.
+
+
+
+### Two-Way-Binding
+
+combine property and event binding. bind both directions
+
+Notice: ngModel is a directive. 
+
+![image-20210416184348061](../../../../../../../Desktop/ShareToMac/code-workspace/typora/antra/resources/image-20210416184348061.png)
+
+[(ngModel)] = "data"         // react to events, and also update the value of  data in our component automatically. we can output this data too
+
+
 
 Two-way data binding (used mainly in [template-driven forms](https://angular.io/guide/forms)) combines property and event binding in a single notation
 
@@ -17,54 +103,6 @@ Two-way data binding (used mainly in [template-driven forms](https://angular.io/
 ```
 
 
-
-### **a. One way binding:** 
-
-A bind from the component **to** **the DOM** (Document Object Model, HTML is a kind of DOM). In our example, in line 2 we created an attribute called `**sentence**` and bound the h1 tag to it.
-
-
-
-### **b. Property binding:** 
-
-A property is a data variable of the component, so binding to property means being notified when the property changes — that means, from the component **to the DOM**..
-
-![img](https://miro.medium.com/max/2944/1*Xi-v_y78jgo0RwzoNLdukA.png)
-
-`cup-of-code` component has two properties: sentence and drink.
-
-we bind our sentences *“My favorite drink is”* and *“coffee”* to these properties.
-
-- Notice that I used the `**@Input()**` notation and that I added it to the **imports** from @angular/core.
-- In the second variable, I used two different names: from the outside, it is called `**type-of-drink**` and from inside the component it is called `**drink**`.
-
-
-
-### **c. Attribute binding:** 
-
-> **What is the difference between attributes and properties?**
-> *The difference is subtle.*
-> *Attributes are referring to additional information of an object.*
-> *Properties are describing the characteristics of an object.*
-> *Most people use these two words as synonyms.*
-> *[*https://www.researchgate.net/post/What_are_the_differences_between_attribute_and_properties*]*![img](https://miro.medium.com/max/1982/1*DtwuOQtp-_4jCiYGrbfH9w.png)
-
-
-
-### **d. Two-way binding**
-
-changes on one side will impact the other side, and vice-versa.
-
-```typescript
-<input [(ngModel)]="typeOfDrink"> 
-    or
-<input [value]="typeOfDrink" (input)="typeOfDrink=$event.target.value">
-```
-
-Notice that you can use the double brackets only with `ngModel`!
-
-
-
-### **e. Event binding:**
 
 
 

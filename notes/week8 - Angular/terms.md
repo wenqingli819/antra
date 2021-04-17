@@ -1,6 +1,8 @@
 https://angular.io/guide/glossary
 
-#### XMLHttpRequest   XMR
+
+
+### XMLHttpRequest   XMR
 
 `XMLHTTPRequest` to get data from API. retrieve data from a URL without having to do a full page refresh. 
 
@@ -35,7 +37,7 @@ fetch is promise based, async await,
 
 
 
-#### CORS
+### CORS
 
 cross-origin resource sharing
 
@@ -67,7 +69,6 @@ https://stackoverflow.com/questions/43985620/asp-net-core-use-multiple-cors-poli
 
 
 
-
 ### localStorage vs SessionStorage
 
 The localStorage and sessionStorage properties allow to save key/value pairs in a web browser.
@@ -93,9 +94,91 @@ Both storage objects provide same methods and properties:
 - `key(index)` – get the key on a given position.
 - `length` – the number of stored items.
 
-
-
 reference:
 
 https://javascript.info/localstorage
 
+
+
+### DOM
+
+##### What is Document Object Model?
+
+- a programming **API for** HTML and XML **documents**.
+- It defines the logical structure of documents and the way a document is accessed and manipulated.
+- Anything found in an HTML or XML document can be accessed, changed, deleted, or added using the DOM
+
+##### How is it different from HTML?
+
+> When a web page is loaded, the browser creates a Document Object Model of the page, which is an object oriented representation of an HTML document, that acts as an interface between JavaScript and the document itself and allows the creation of dynamic web pages.
+
+
+
+HTML 
+
+```html
+      <TABLE>
+      <ROWS> 
+      <TR> 
+      <TD>Shady Grove</TD>
+      <TD>Aeolian</TD> 
+      </TR> 
+      <TR>
+      <TD>Over the River, Charlie</TD>
+      <TD>Dorian</TD> 
+      </TR> 
+      </ROWS>
+      </TABLE>
+```
+
+DOM![DOM representation of the example table](https://www.w3.org/TR/WD-DOM/table.gif)
+
+the nodes in the above diagram do not represent a data structure, they represent objects, which have functions and identity (attributes).
+
+
+
+##### DOM consists two parts 
+
+1. **DOM Core** 
+
+   functionality used for XML documents
+
+   also serves as the basis for DOM HTML. 
+
+2. **DOM HTML**
+
+    The Level 1 DOM HTML specification defines additional functionality needed for HTML documents.
+
+
+
+##### difference between html attributes and properties
+
+| HTML                                       | DOM                                                          |
+| ------------------------------------------ | ------------------------------------------------------------ |
+| define *attributes* on your HTML elements. | Then, once the browser parses your code, a corresponding DOM node will be created. This node is an object, and therefore it has *properties*. |
+
+Example:
+
+```html
+<input type="text" value="Name:">
+```
+
+This HTML element has 2 attributes (`type` and `value`).
+
+Once the browser parses this code, a [HTMLInputElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement) object will be created, and this object will contain dozens of properties like: accept, accessKey, align, alt, attributes, autofocus, baseURI, checked, childElementCount, childNodes, children, classList, className, clientHeight, etc.
+
+
+
+
+
+##### What is XML？
+
+Html is a subset of XML. People used to do xml transforms and XPath against html, but the DOM API and frameworks like Angular make all of that completely unnecessary
+
+![JAXP_DOM_node_interfaces_inheritance_hierarchy](https://www.codevoila.com/cvuploads/images/201608/JAXP_DOM_node_interfaces_inheritance_hierarchy.png)
+
+
+
+https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
+
+https://www.w3.org/TR/WD-DOM/introduction.html

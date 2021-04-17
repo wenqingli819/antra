@@ -18,11 +18,13 @@ export class MovieService {
 
   getMoviesByGenre(id:number):Observable<MovieCard[]>{
 
-    return this.apiService.getAll('movies/genre');
+    return this.apiService.getOne('movies/genre',id);
   }
 
   getMovieDetails(id:number):Observable<Movie>{
-    return this.apiService.getOne(`${'/movies/'}${id}`);
+    return this.apiService.getOne('movies',id);
   }
+
+
 
 }

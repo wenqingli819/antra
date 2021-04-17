@@ -17,6 +17,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 
 import{FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CastItemComponent } from './cast/cast-item/cast-item.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import{FormsModule, ReactiveFormsModule} from '@angular/forms';
     MovieDetailsComponent,
     MovieCardListComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CastItemComponent
   ],
   imports: [
     BrowserModule,
