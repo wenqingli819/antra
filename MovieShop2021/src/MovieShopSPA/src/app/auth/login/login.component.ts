@@ -30,11 +30,14 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.authService.login(this.userLogin).subscribe(
-      (response) =>{
-        if(response){
-          this.router.navigate(['/']);              //need to inject router
-        }else{
-            this.invalidLogin=true;
+      (response) => {
+        if (response){
+          this.router.navigate(['/']);
+        }
+      },
+      (error) => {
+        if (error){
+          this.invalidLogin = true;
         }
       }
     );

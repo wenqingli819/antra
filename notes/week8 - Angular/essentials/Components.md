@@ -1,3 +1,5 @@
+
+
 # Component
 
 | MVC Controller | Angular Component      |
@@ -147,3 +149,184 @@ CLI do this automatically, but do check:
 
 ![image-20210416155528445](../../../../../../../Desktop/ShareToMac/code-workspace/typora/antra/resources/image-20210416155528445.png)
 
+-----------
+
+### Component communication
+
+#### Sending data from parent to child
+
+```
+<parent-component>
+  <child-component></child-component>
+</parent-component>
+```
+
+use `@Input` on child component <img src="https://angular.io/generated/images/guide/inputs-outputs/input.svg" alt="Input data flow diagram" style="zoom: 25%;" />
+
+1. configure the child component 
+
+`@Input()` use this in the child component, it allows a parent component to update data in the child component
+
+```typescript
+//child.ts
+import { Component, Input } from '@angular/core';
+
+export class ItemDetailComponent {
+  @Input() item: string; //  receive its value from the parent component.
+}
+
+// child.html
+<p>
+  Today's item: {{item}}
+</p>
+```
+
+2. configure the parent component
+
+```typescript
+// parent.html
+<app-item-detail [item]="currentItem"></app-item-detail>
+    
+    
+// parent.ts
+export class AppComponent {
+  currentItem = 'Television'; 
+    //With @Input() in the child component, Angular passes the value for currentItem to the child so that item renders as Television.
+}
+```
+
+<img src="https://angular.io/generated/images/guide/inputs-outputs/input-diagram-target-source.svg" alt="Property binding diagram" style="zoom: 25%;" />
+
+
+
+--------
+
+#### Sending data from child to parent 
+
+using @Output on child![Output diagram](https://angular.io/generated/images/guide/inputs-outputs/output.svg)
+
+##### Child to Parent: Sharing Data via `Output()` and `EventEmitter`
+
+> emit data from the child, which can be listened to by the parent.
+
+scenarios: share data changes that occur on things 
+
+- like button clicks, 
+- form entries, 
+- and other user events.
+
+1. configure the child class,  `Output` and `EventEmitter`
+
+   ```c#
+   import { Output, EventEmitter } from '@angular/core';
+   
+   export class ItemOutputComponent {
+       
+   // declare a messageEvent variable with the Output decorator and set it equal to a new event emitter
+   @Output() newItemEvent = new EventEmitter<string>(); 
+   //uses the `@Output()` property to raise an event to notify the parent of the change.
+   
+   // create a function that calls emit on this value we want to sent
+   addNewItem(value: string) {
+       this.newItemEvent.emit(value);
+     }
+   }
+   ```
+
+   ```html
+    <!--> child.html <-->
+   
+   <label>Add an item: <input #newItem></label>
+    <!--> use HTML label for <input> elements <-->
+   
+    <!--> create a button to trigger this function. <-->
+   <button (click)="addNewItem(newItem.value)">  
+       Add to parent's list
+   </button>
+   ```
+
+
+3. parent
+
+   ```typescript
+   //parent.ts
+   export class AppComponent {
+     items = ['item1', 'item2', 'item3', 'item4'];
+   
+     addItem(newItem: string) {
+       this.items.push(newItem);
+     }
+   }
+   
+   
+   //parent.html
+   <app-item-output (newItemEvent)="addItem($event)"></app-item-output>
+   ```
+
+   
+
+##### Child to Parent: Sharing Data via `ViewChild`
+
+@[ViewChild](https://angular.io/api/core/ViewChild) on the parent allows a one component to be injected into another.
+
+```typescript
+// parent
+export class ParentComponent implements AfterViewInit {
+  @ViewChild(ChildComponent) child;
+    
+  constructor() { }
+
+  message:string;
+
+  ngAfterViewInit() {
+    this.message = this.child.message
+  }
+}
+
+//child
+export class ChildComponent {
+
+  message = 'Hola Mundo!';
+
+  constructor() { }
+
+}
+```
+
+https://fireship.io/lessons/sharing-data-between-angular-components-four-methods/
+
+--------
+
+#### pass data between unrelated components
+
+When passing data between components that lack a direct connection, such as siblings, grandchildren, etc, you should you a shared service.  
+
+[RxJS BehaviorSubject](https://xgrommx.github.io/rx-book/content/subjects/behavior_subject/index.html) 
+
+You can also use a regular RxJS Subject for sharing data via the service, but here’s why I prefer a BehaviorSubject.
+
+- It will always return the current value on subscription - there is no need to call `onnext`
+- It has a `getValue()` function to extract the last value as raw data.
+- It ensures that the component always receives the most recent data.
+
+- [data.service.ts](https://fireship.io/lessons/sharing-data-between-angular-components-four-methods/#dataservicets)
+- [parent.component.ts](https://fireship.io/lessons/sharing-data-between-angular-components-four-methods/#parentcomponentts-3)
+- [sibling.component.ts](https://fireship.io/lessons/sharing-data-between-angular-components-four-methods/#siblingcomponentts)
+
+
+
+
+
+### Component life cycle
+
+![image-20210421222831767](../../../../../../../Desktop/ShareToMac/code-workspace/typora/antra/resources/image-20210421222831767.png)
+
+if we are on the component, if we use snapshot and we have use routerLink to have a new route on this component. Then the url would get updated, but the content still the same.
+
+angular doesn't re-instantiate the component if we are on the component;
+
+it is ok to use `snapshot` for the first initialization, but to be able to react to subsequent changes, we need to `subscribe`.
+
+`params` is an observable: a way to subscribe to some event which might happen in the future, then execute the code when it happens without having to wait for it
+
+subscription will always live in memory because it is not closely tied to your component. but under the hood, angular cleans up the subscription for us whenever the component is destroyed . 

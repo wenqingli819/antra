@@ -8,3 +8,7 @@ We have 2 Angular 3rd party libraries:
 
 - ng-bootstrap Dropdowns, Alerts, Carousel, Modal using regular Angular without jQuery
 - ngx-bootstrap
+
+
+
+https://www.w3schools.com/bootstrap4/bootstrap_containers.asp

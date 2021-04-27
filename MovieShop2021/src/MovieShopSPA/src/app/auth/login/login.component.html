@@ -1,14 +1,17 @@
 <div class="container">
     <form (ngSubmit)="login()" #loginForm="ngForm">
-        <div *ngIf="invalidLogin"
+
+      <div *ngIf="invalidLogin"
         class="alert alert-danger">Invalid username and/or password.
-        </div>
+      </div>
 
       <div class="form-group">
         <label for="email">Email Address</label>
         <input
           type="email"
           class="form-control"
+          required
+          email
           id="email"
           aria-describedby="emailHelp"
           name="email"
@@ -23,13 +26,16 @@
         <input
           type="password"
           class="form-control"
+          required
           id="password"
           name="password"
-          [(ngModel)]="userLogin.password"
-        />
+          [(ngModel)]="userLogin.password"/>
       </div>
 
-      <input type="submit" value="Submit" class="btn btn-primary" />
+      <button class="btn btn-primary"
+        type="submit"
+        [disabled]="!loginForm.valid"> Submit
+      </button>
     </form>
 
     <!-- <div>

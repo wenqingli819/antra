@@ -36,7 +36,7 @@ namespace Infrastructure.Data
             movieBuilder.Entity<Review>(ConfigureReview);
 
 
-
+            // create many-to-many relationship
             movieBuilder.Entity<Movie>().HasMany(m => m.Genres).WithMany(g => g.Movies)
                 .UsingEntity<Dictionary<string, object>>("MovieGenre",
                     m => m.HasOne<Genre>().WithMany().HasForeignKey("GenreId"),

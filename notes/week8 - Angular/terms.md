@@ -43,11 +43,20 @@ cross-origin resource sharing
 
 ![image-20210414002751546](../../../../../../Desktop/ShareToMac/code-workspace/typora/antra/resources/image-20210414002751546.png)
 
-browser implements the same origin policy as a part of the security model.
+browser implements the same origin policy as a part of the security model - allow data to be shared from the same origin,
 
-allow data to be shared from the same url,
+```
+URL 3	http://www.somedb.com/search?q=ancient
+scheme	http
+hostname	www.somedb.com
+port	80
+origin	http://www.somedb.com:80
+path	/search
+query	?q=ancient
+fragment	 
+```
 
-blocks data from external url unless certain conditions are met:
+blocks data from external origin unless certain conditions are met:
 
 - Access-Control-Allow-Origin: foo.com
 
@@ -182,3 +191,26 @@ Html is a subset of XML. People used to do xml transforms and XPath against html
 https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
 
 https://www.w3.org/TR/WD-DOM/introduction.html
+
+
+
+### breadcrumb 
+
+**Use breadcrumb navigation** for large websites and websites that have hierarchically arranged pages. 
+
+You **shouldn’t** use breadcrumbs for single-level websites that have no logical hierarchy or grouping.
+
+![Location Based Breadcrumb - Example](https://static.wingify.com/vwo/uploads/sites/3/2015/08/Location-Based-Breadcrumb-1024x349.jpg)
+
+![Attribute Based Breadcrumb Example](https://static.wingify.com/vwo/uploads/sites/3/2015/08/Attribute-Based-Breadcrumb2-1024x418.jpg)
+
+![History Based Breadcrumb - Example](https://static.wingify.com/vwo/uploads/sites/3/2015/08/History-Based-Breadcrumb.jpg)
+
+![What is Breadcrumb & How It Eases Navigation? (Examples)](https://static.wingify.com/vwo/uploads/sites/3/2015/08/Both-History-and-Location-Based.jpg)
+
+![Example: Both Location and Attribute Based Breadcrumbs](https://static.wingify.com/vwo/uploads/sites/3/2015/08/Location-and-Attribute.jpg)
+
+
+
+ngModel and NgModule
+

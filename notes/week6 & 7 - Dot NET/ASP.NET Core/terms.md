@@ -159,3 +159,14 @@ why we need readonly?
 if remove, then someone can create the instance anywhere in the code.
 
 ![image-20210401002532419](../../../resources/image-20210401002532419.png)
+
+
+
+### Model = Entity 
+
+Represents the internal domain data of our application (the “M” in MVC).Data 
+
+### Transfer Objects (DTOs)
+
+Are the representations of our Domain Models to our external consumers, meaning that we don’t expose internal implementation detail (our Models) to external concerns. This has multiple benefits as we’ll discuss later.
+

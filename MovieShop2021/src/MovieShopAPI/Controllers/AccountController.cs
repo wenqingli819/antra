@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using ApplicationCore.Models.Request;
 using ApplicationCore.ServiceInterfaces;
@@ -46,7 +43,6 @@ namespace MovieShopAPI.Controllers
             {
                 return BadRequest("Please check data");
             }
-
             var registeredUser = await _userService.RegisterUser(requestModel);
             return Ok(registeredUser);
         }
